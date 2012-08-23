@@ -11,7 +11,7 @@
 
 set WINCEREL=1
 
-@REM support for SMDK6410X5D
+@REM s1upport for SMDK6410X5D
 @REM X5D MCP has 2Gb NAND + 512Mb M-DDR + 512Mb OneDRAM
 @REM set SMDK6410_X5D=
 
