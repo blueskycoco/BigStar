@@ -1,0 +1,54 @@
+!if 0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+!endif
+!if 0
+Use of this source code is subject to the terms of the Microsoft end-user
+license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+If you did not accept the terms of the EULA, you are not authorized to use
+this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+install media.
+!endif
+
+
+WINCEOEM=1
+WINCECPU=1
+NOMIPS16CODE=1
+RELEASETYPE=PLATFORM
+
+CDEFINES=$(CDEFINES) -DCEDDK_USEDDKMACRO
+
+!IF "$(ENABLE_OAL_ILTIMING)"=="1"
+CDEFINES=$(CDEFINES) -DOAL_ILTIMING
+!ENDIF
+
+_COMMONPUBROOT=$(_PUBLICROOT)\common
+_PLATCOMMONLIB=$(_PLATFORMROOT)\common\lib
+__PROJROOT=$(_PROJECTROOT)
+
+
+_OEMINCPATH=$(_WINCEROOT)\public\common\sdk\inc;
+_OEMINCPATH=$(_OEMINCPATH);$(_WINCEROOT)\public\common\oak\inc;
+_OEMINCPATH=$(_OEMINCPATH);$(_WINCEROOT)\public\common\ddk\inc;
+
+_ISVINCPATH=$(_WINCEROOT)\public\common\sdk\inc;
+
+INCLUDES=$(_TARGETPLATROOT)\src\inc;
+INCLUDES=$(INCLUDES);$(_WINCEROOT)\public\common\oak\drivers\block\msflashfmd\inc
+INCLUDES=$(INCLUDES);$(_PUBLICROOT)\common\oak\inc
+INCLUDES=$(INCLUDES);$(_PLATFORMROOT)\common\src\inc
+
+CDEFINES=$(CDEFINES) -Dproject_$(_TGTPROJ)=1
+
+
+!if "$(SMDK6410_X5D)" == "1"
+CDEFINES=$(CDEFINES) -DSMDK6410_X5D
+ADEFINES=$(ADEFINES) -pd "SMDK6410_X5D SETL {TRUE}"
+!else
+ADEFINES=$(ADEFINES) -pd "SMDK6410_X5D SETL {FALSE}"
+!endif
+
+!if "$(BSP_IROMBOOT)" == "1"
+CDEFINES=$(CDEFINES) -DIROMBOOT
+ADEFINES=$(ADEFINES) -pd "IROMBOOT SETS \"1\""
+!endif
+

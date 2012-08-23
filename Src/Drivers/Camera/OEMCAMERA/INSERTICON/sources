@@ -1,0 +1,10 @@
+TARGETNAME=InsertIcon
+TARGETTYPE=LIBRARY
+
+WINCETARGETFILES=$(_RELEASELIBDIR)\InsertIcon.res
+
+RDEFINES=$(RDEFINES) -n
+
+SOURCES= \
+    iidl.cpp    \
+    cameraicon.cpp \

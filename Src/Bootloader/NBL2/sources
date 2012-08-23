@@ -1,0 +1,58 @@
+!if 0
+    File:   DIRS
+
+    Author: Flash Software
+
+	COPYRIGHT (c) 2006 SAMSUNG ELECTRONICS CO., LTD. ALL RIGHTS RESERVED
+!endif
+
+!if "$(WINCEDEBUG)" == "debug"
+SKIPBUILD=1
+!endif
+
+TARGETNAME=nbl2
+TARGETTYPE=PROGRAM
+RELEASETYPE=PLATFORM
+EXEENTRY=StartUp
+NOMIPS16CODE=1
+
+SYNCHRONIZE_DRAIN=1
+INCLUDES=$(INCLUDES);$(_PUBLICROOT)\common\oak\drivers\block\msflashfmd\inc;
+INCLUDES=$(INCLUDES);$(_TARGETPLATROOT)\src\bootloader\eboot\eboot;$(_TARGETPLATROOT)\src\common\nandflash\fmd;
+INCLUDES=$(INCLUDES);$(_TARGETPLATROOT)\src\drivers\display\s3c6410_disp_lib;$(_TARGETPLATROOT)\src\drivers\display\s3c6410_ldi_lib;
+ADEFINES=$(ADEFINES) -pd "BOOTLOADER SETL {TRUE}"
+
+LDEFINES=-subsystem:native /DEBUG /DEBUGTYPE:CV /FIXED:NO
+
+!IF "$(BSP_DEBUGPORT)" == "SERIAL_UART0"
+CDEFINES=$(CDEFINES) -DDEBUG_PORT=0
+!ENDIF
+
+!IF "$(BSP_DEBUGPORT)" == "SERIAL_UART1"
+CDEFINES=$(CDEFINES) -DDEBUG_PORT=1
+!ENDIF
+CDEFINES=$(CDEFINES) -DBOOTLOADER
+
+TARGETLIBS= \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\oal_cache_s3c6410.lib \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\oal_memory_s3c6410.lib  \
+	$(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_log.lib  \
+	$(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_other.lib  \
+	$(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_blnk.lib  \
+#	$(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\bootpart.lib         \
+	$(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\ddk_io.lib     \
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\gsnull.lib		\
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\fulllibc.lib   \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\nandflash_lib.lib     \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_disp_lib.lib	\
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_ldi_lib.lib
+
+SOURCELIBS =
+
+SOURCES= \
+	startup.s \
+	util.s    \
+	debug.c	  \
+	main.c    \
+
+WINCETARGETFILES=nbl2_romimage

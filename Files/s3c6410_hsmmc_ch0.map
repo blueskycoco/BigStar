@@ -1,0 +1,377 @@
+ s3c6410_hsmmc_ch0
+
+ Timestamp is 11455b33                           
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00001550H .rdata                  CODE
+ 0001:00001550 0000002eH .rdata$debug            CODE
+ 0001:00001580 00004914H .text                   CODE
+ 0001:00005e94 0000003cH .xdata                  CODE
+ 0001:00005ed0 0000003cH .idata$2                CODE
+ 0001:00005f0c 00000014H .idata$3                CODE
+ 0001:00005f20 000000fcH .idata$4                CODE
+ 0001:0000601c 00000036H .idata$6                CODE
+ 0001:00006060 00000109H .edata                  CODE
+ 0002:00000000 000000fcH .idata$5                DATA
+ 0002:000000fc 0000004cH .data                   DATA
+ 0002:00000148 0000043cH .bss                    DATA
+ 0003:00000000 00000488H .pdata                  DATA
+ 0004:00000000 00000004H .CRT$XCAA               DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000020       ??_7CSDHController@@6B@    10001020     s3c6410_hsmmc_ch0.obj
+ 0001:00000080       ??_C@_1FO@EKPBJLEJ@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?5?$AAD?$AAo?$AAw?$AAn?$AA?5@ 10001080     s3c6410_hsmmc_ch0.obj
+ 0001:000000e0       ??_C@_1IK@CJFNNHNL@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAC?$AAl?$AAo?$AAc?$AAk?$AA?5?$AA?$CG?$AA?5?$AAP?$AAo?$AAw@ 100010e0     s3c6410_hsmmc_ch0.obj
+ 0001:00000170       ??_C@_1FE@NOOGFNEI@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAG?$AAP?$AAI?$AAO?$AA?5?$AAr?$AAe?$AAg?$AAi?$AAs?$AAt@ 10001170     s3c6410_hsmmc_ch0.obj
+ 0001:000001c8       ??_C@_1GE@HMJKPHAD@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAH?$AAS?$AAM?$AAM?$AAC?$AA?5?$AAS?$AAp?$AAe?$AAc?$AAi@ 100011c8     s3c6410_hsmmc_ch0.obj
+ 0001:00000230       ??_C@_1GC@JAJNMEOB@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAi?$AAn@ 10001230     s3c6410_hsmmc_ch0.obj
+ 0001:00000298       ??_C@_1FK@CDFNEAKF@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?5?$AAU?$AAp?$AA?5?$AAt?$AAh@ 10001298     s3c6410_hsmmc_ch0.obj
+ 0001:000002f8       ??_7CSDHCBase@@6B@         100012f8     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00000358       ??_C@_1DO@JMILGAAD@?$AAC?$AAS?$AAD?$AAH?$AAC?$AAB?$AAa?$AAs?$AAe?$AA?3?$AA?3?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz@ 10001358     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00000398       ??_C@_1FM@OGDOECHN@?$AA?$CF?$AAs?$AA?5?$AAI?$AAO?$AAC?$AAT?$AAL?$AA_?$AAH?$AAA?$AAL?$AA_?$AAR?$AAE?$AAQ?$AAU?$AAE?$AAS?$AAT@ 10001398     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000003f4       ??_C@_1O@LHHKDMEM@?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$AA@ 100013f4     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00000404       ??_C@_1BI@BHLBGEOK@?$AAP?$AAr?$AAi?$AAo?$AAr?$AAi?$AAt?$AAy?$AA2?$AA5?$AA6?$AA?$AA@ 10001404     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:0000041c       ??_C@_11LOCGONAA@?$AA?$AA@ 1000141c     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00000420       ??_C@_1CG@EICLCGPB@?$AAO?$AAb?$AAj?$AAe?$AAc?$AAt?$AAC?$AAr?$AAe?$AAa?$AAt?$AAi?$AAo?$AAn?$AAP?$AAr?$AAo?$AAc?$AA?$AA@ 10001420     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00000448       ??_C@_17DJMMGLBL@?$AAD?$AAl?$AAl?$AA?$AA@ 10001448     s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00000450       ??_7CSDHCSlotBase@@6B@     10001450     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000052c       ??_C@_1BK@ENFGALMN@?$AAP?$AAo?$AAw?$AAe?$AAr?$AAU?$AAp?$AAD?$AAe?$AAl?$AAa?$AAy?$AA?$AA@ 1000152c     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000548       ??_C@_1DE@MOABFLGC@?$AAA?$AAl?$AAl?$AAo?$AAw?$AAW?$AAa?$AAk?$AAe?$AAO?$AAn?$AAS?$AAD?$AAI?$AAO?$AAI?$AAn?$AAt?$AAe?$AAr@ 10001548     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000057c       ??_C@_1CA@LCEEPFOK@?$AAP?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AAM?$AAo?$AAd?$AAe?$AAS?$AAi?$AAz?$AAe?$AA?$AA@ 1000157c     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000059c       ??_C@_1CG@OOJEOPHC@?$AAB?$AAa?$AAs?$AAe?$AAC?$AAl?$AAo?$AAc?$AAk?$AAF?$AAr?$AAe?$AAq?$AAu?$AAe?$AAn?$AAc?$AAy?$AA?$AA@ 1000159c     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000005cc       ??_C@_1BI@CJMKCIMI@?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAI?$AAn?$AAM?$AAS?$AA?$AA@ 100015cc     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000005e4       ??_C@_1CM@KAJLADLH@?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AAC?$AAl?$AAo?$AAc?$AAk?$AAF?$AAr?$AAe?$AAq?$AAu?$AAe?$AAn?$AAc@ 100015e4     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000610       ??_C@_1CK@PAHGCNDL@?$AAD?$AAe?$AAf?$AAa?$AAu?$AAl?$AAt?$AAW?$AAa?$AAk?$AAe?$AAu?$AAp?$AAS?$AAo?$AAu?$AAr?$AAc?$AAe?$AAs@ 10001610     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000063c       ??_C@_1DK@NOBMCEGP@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAA?$AAU?$AAT?$AAO?$AAC?$AAM?$AAD?$AA1?$AA2?$AA?5?$AAE@ 1000163c     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000678       ??_C@_1DK@NDINLCHN@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAB?$AAU?$AAS?$AA?5?$AAP?$AAO?$AAW?$AAE?$AAR?$AA?5?$AAE@ 10001678     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000006b4       ??_C@_1DM@IKKNKLAC@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAD?$AAA?$AAT?$AA?5?$AAE?$AAN?$AAD?$AAB?$AAI?$AAT?$AA?5@ 100016b4     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000006f0       ??_C@_1DG@LNOFKOGE@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAD?$AAA?$AAT?$AA?5?$AAC?$AAR?$AAC?$AA?5?$AAE?$AAr?$AAr@ 100016f0     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000728       ??_C@_1DO@ECOOKGAN@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAD?$AAA?$AAT?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt@ 10001728     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000768       ??_C@_1DK@OCKLPCKN@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAC?$AAM?$AAD?$AA?5?$AAI?$AAN?$AAD?$AAE?$AAX?$AA?5?$AAE@ 10001768     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000007a4       ??_C@_1DM@EEKDAIEH@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAC?$AAM?$AAD?$AA?5?$AAE?$AAN?$AAD?$AAB?$AAI?$AAT?$AA?5@ 100017a4     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000007e0       ??_C@_1DG@JBGGCIMN@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAC?$AAM?$AAD?$AA?5?$AAC?$AAR?$AAC?$AA?5?$AAE?$AAr?$AAr@ 100017e0     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000818       ??_C@_1DO@IADPCBBB@?$AA?$FL?$AAH?$AAS?$AAM?$AAM?$AAC?$AA0?$AA?$FN?$AA?5?$AAC?$AAM?$AAD?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt@ 10001818     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000858       ??_C@_1BM@JCKBPNAL@?$AAE?$AAR?$AAR?$AA?5?$AAC?$AAM?$AAD?$AA?3?$AA?$CF?$AAd?$AA?5?$AA?3?$AA?5?$AA?$AA@ 10001858     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00000878       ??_C@_1HI@FMLOFOEA@?$AA?$FL?$AAD?$AAR?$AAV?$AAL?$AAI?$AAB?$AA?3?$AAE?$AAR?$AAR?$AA?$FN?$AA?5?$AAD?$AAr?$AAv?$AAL?$AAi?$AAb?$AA_@ 10001878     DriverLib:DriverLib_mem.obj
+ 0001:000008f0       ??_C@_1HG@LLGIEHCF@?$AA?$FL?$AAD?$AAR?$AAV?$AAL?$AAI?$AAB?$AA?3?$AAE?$AAR?$AAR?$AA?$FN?$AA?5?$AAD?$AAr?$AAv?$AAL?$AAi?$AAb?$AA_@ 100018f0     DriverLib:DriverLib_mem.obj
+ 0001:00000968       ??_C@_1GO@DKNCFCKB@?$AA?$FL?$AAD?$AAR?$AAV?$AAL?$AAI?$AAB?$AA?3?$AAE?$AAR?$AAR?$AA?$FN?$AA?5?$AAD?$AAr?$AAv?$AAL?$AAi?$AAb?$AA_@ 10001968     DriverLib:DriverLib_mem.obj
+ 0001:000009d8       ??_C@_1II@GMHCLLNI@?$AA?5?$AAE?$AAX?$AAC?$AAE?$AAP?$AAT?$AAI?$AAO?$AAN?$AA_?$AAA?$AAC?$AAC?$AAE?$AAS?$AAS?$AA_?$AAV?$AAI@ 100019d8     sdcardlib:sddebug.obj
+ 0001:00000a60       ??_C@_1HA@BGPDKPFE@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAA?$AAc?$AAc?$AAe?$AAs?$AAs@ 10001a60     sdcardlib:sddebug.obj
+ 0001:00000ad0       ??_C@_1GO@LIPPKMGO@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAR?$AAe?$AAa?$AAd?$AA?5?$AAA?$AAc?$AAc?$AAe?$AAs?$AAs?$AA?5@ 10001ad0     sdcardlib:sddebug.obj
+ 0001:00000b40       ??_C@_1DK@CNMPAAFJ@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAU@ 10001b40     sdcardlib:sddebug.obj
+ 0001:00000b80       ??_C@_1FM@DAEFKFAP@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001b80     sdcardlib:sddebug.obj
+ 0001:00000be0       ??_C@_1GA@IHGOLIHL@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001be0     sdcardlib:sddebug.obj
+ 0001:00000c40       ??_C@_1FI@BCFEANND@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001c40     sdcardlib:sddebug.obj
+ 0001:00000c98       ??_C@_1GE@PJCCPNIC@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001c98     sdcardlib:sddebug.obj
+ 0001:00000d00       ??_C@_1FK@PFDOHDMA@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001d00     sdcardlib:sddebug.obj
+ 0001:00000d60       ??_C@_1FO@KLJPJDBD@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001d60     sdcardlib:sddebug.obj
+ 0001:00000dc0       ??_C@_1FI@JMGLEANA@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001dc0     sdcardlib:sddebug.obj
+ 0001:00000e18       ??_C@_1GK@PFCJLJFD@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001e18     sdcardlib:sddebug.obj
+ 0001:00000e88       ??_C@_1GE@IFHGPJDI@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001e88     sdcardlib:sddebug.obj
+ 0001:00000ef0       ??_C@_1GE@KEAPHJPC@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001ef0     sdcardlib:sddebug.obj
+ 0001:00000f58       ??_C@_1GI@FODJCDCC@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001f58     sdcardlib:sddebug.obj
+ 0001:00000fc0       ??_C@_1FM@BABDDJHM@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10001fc0     sdcardlib:sddebug.obj
+ 0001:00001020       ??_C@_1GG@OHPADMDK@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10002020     sdcardlib:sddebug.obj
+ 0001:00001088       ??_C@_1HA@NODJFEFD@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10002088     sdcardlib:sddebug.obj
+ 0001:000010f8       ??_C@_1GG@EOOLNNB@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 100020f8     sdcardlib:sddebug.obj
+ 0001:00001160       ??_C@_1GK@BIDJEADM@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10002160     sdcardlib:sddebug.obj
+ 0001:000011d0       ??_C@_1FK@HMKLGOCN@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 100021d0     sdcardlib:sddebug.obj
+ 0001:00001230       ??_C@_1FE@FKGKNFOP@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10002230     sdcardlib:sddebug.obj
+ 0001:00001288       ??_C@_1GK@NIJAGIMI@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10002288     sdcardlib:sddebug.obj
+ 0001:000012f8       ??_C@_1FE@LHIOIAHH@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 100022f8     sdcardlib:sddebug.obj
+ 0001:00001350       ??_C@_1FG@FAMEFIJC@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 10002350     sdcardlib:sddebug.obj
+ 0001:000013a8       ??_C@_1GA@IMOMELNN@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE@ 100023a8     sdcardlib:sddebug.obj
+ 0001:00001408       ??_C@_1LA@GNONOPLI@?$AAS?$AAD?$AAB?$AAu?$AAs?$AAD?$AAr?$AAi?$AAv?$AAe?$AAr?$AA?3?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi@ 10002408     sdcardlib:sddebug.obj
+ 0001:000014b8       ??_C@_1JI@EFCALCGP@?$AAS?$AAD?$AAP?$AAe?$AAr?$AAf?$AAo?$AAr?$AAm?$AAS?$AAa?$AAf?$AAe?$AAC?$AAo?$AAp?$AAy?$AA?5?$AA?$CI?$AAD@ 100024b8     sdcardlib:sddebug.obj
+ 0001:00001580       ?CancelIoHandler@CSDHCBase@@UAAEKPAU_SD_BUS_REQUEST@@@Z 10002580 f i s3c6410_hsmmc_ch0.obj
+ 0001:00001588       ?IOControl@CSDHCBase@@UAAKKPAEK0KPAK@Z 10002588 f i s3c6410_hsmmc_ch0.obj
+ 0001:00001590       ?GetSlot@CSDHCBase@@MAAPAVCSDHCSlotBase@@K@Z 10002590 f i s3c6410_hsmmc_ch0.obj
+ 0001:000015a0       ?Lock@CSDHCBase@@MAAXXZ    100025a0 f i s3c6410_hsmmc_ch0.obj
+ 0001:000015b8       ?Unlock@CSDHCBase@@MAAXXZ  100025b8 f i s3c6410_hsmmc_ch0.obj
+ 0001:000015d0       ??_GCSDHController@@UAAPAXI@Z 100025d0 f i s3c6410_hsmmc_ch0.obj
+ 0001:000015d0       ??_ECSDHController@@UAAPAXI@Z 100025d0 f i s3c6410_hsmmc_ch0.obj
+ 0001:00001604       ?PowerDown@CSDHController@@MAAXXZ 10002604 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001628       CreateHSMMCHCObject        10002628 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001664       ?DestroyHSMMCHCObject@CSDHController@@SAXPAVCSDHCBase@@@Z 10002664 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001688       ?InitClkPwr@CSDHController@@IAAHXZ 10002688 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001718       ?InitGPIO@CSDHController@@IAAHXZ 10002718 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001834       ?InitHSMMC@CSDHController@@IAAHXZ 10002834 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001884       ?InitCh@CSDHController@@IAAHXZ 10002884 f   s3c6410_hsmmc_ch0.obj
+ 0001:000018d0       ?BusRequestHandler@CSDHCBase@@UAAJKPAU_SD_BUS_REQUEST@@@Z 100028d0 f i s3c6410_hsmmc_ch0.obj
+ 0001:00001940       ?AllocateSlotObjects@CSDHCBase@@MAAPAVCSDHCSlotBase@@K@Z 10002940 f i s3c6410_hsmmc_ch0.obj
+ 0001:00001998       ??_ECSDHCSlotBase@@UAAPAXI@Z 10002998 f i s3c6410_hsmmc_ch0.obj
+ 0001:00001a08       ?GetDestructionProc@CSDHController@@UAAP6AXPAVCSDHCBase@@@ZXZ 10002a08 f i s3c6410_hsmmc_ch0.obj
+ 0001:00001a14       ?Init@CSDHController@@UAAHPBG@Z 10002a14 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001a58       ?PowerUp@CSDHController@@UAAXXZ 10002a58 f   s3c6410_hsmmc_ch0.obj
+ 0001:00001a88       DllEntry                   10002a88 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001ae0       HSC_PreDeinit              10002ae0 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001b00       HSC_Deinit                 10002b00 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001b34       HSC_Init                   10002b34 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001b80       HSC_Open                   10002b80 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001b84       HSC_Close                  10002b84 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001b8c       HSC_PowerDown              10002b8c f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001ba8       HSC_PowerUp                10002ba8 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001bc4       HSC_IOControl              10002bc4 f   s3c6410_hsmmc_ch0_lib:sdhcmain.obj
+ 0001:00001c18       ?ValueSZ@CReg@@QAAHPBGPAGK@Z 10002c18 f i s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00001c74       ?ValueDW@CReg@@QAAKPBGK@Z  10002c74 f i s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00001cc4       ?ISTStub@CSDHCBase@@KAKPAX@Z 10002cc4 f i s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00001ce0       ??0CSDHCBase@@QAA@XZ       10002ce0 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00001d60       ?Start@CSDHCBase@@UAAJXZ   10002d60 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00001e6c       ?Stop@CSDHCBase@@UAAJXZ    10002e6c f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00001f58       ?SlotOptionHandler@CSDHCBase@@UAAJKW4_SD_SLOT_OPTION_CODE@@PAXK@Z 10002f58 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000020d4       ?PowerDown@CSDHCBase@@UAAXXZ 100030d4 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002158       ?PowerUp@CSDHCBase@@UAAXXZ 10003158 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000021e8       ?PreDeinit@CSDHCBase@@UAAXXZ 100031e8 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002220       ?InitializeHardware@CSDHCBase@@MAAHXZ 10003220 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000024c8       ?DeinitializeHardware@CSDHCBase@@MAAHXZ 100034c8 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002524       ?IST@CSDHCBase@@MAAKXZ     10003524 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002584       ?DetermineSlotCount@CSDHCBase@@MAAKXZ 10003584 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000025d0       ?DetermineFirstSlotWindow@CSDHCBase@@MAAKPAU_DDKWINDOWINFO_tag@@@Z 100035d0 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000025d8       ?DetermineRequiredControllerPowerState@CSDHCBase@@MAA?AW4_CEDEVICE_POWER_STATE@@XZ 100035d8 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:0000265c       ?SetControllerPowerState@CSDHCBase@@MAAJW4_CEDEVICE_POWER_STATE@@@Z 1000365c f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002700       ?SDHCInitialize@CSDHCBase@@SAJPAU_SDCARD_HC_CONTEXT@@@Z 10003700 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002720       ?SDHCDeinitialize@CSDHCBase@@SAJPAU_SDCARD_HC_CONTEXT@@@Z 10003720 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002740       ?SDHCCancelIoHandler@CSDHCBase@@SAEPAU_SDCARD_HC_CONTEXT@@KPAU_SD_BUS_REQUEST@@@Z 10003740 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002760       ?SDHCBusRequestHandler@CSDHCBase@@SAJPAU_SDCARD_HC_CONTEXT@@KPAU_SD_BUS_REQUEST@@@Z 10003760 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002780       ?SDHCSlotOptionHandler@CSDHCBase@@SAJPAU_SDCARD_HC_CONTEXT@@KW4_SD_SLOT_OPTION_CODE@@PAXK@Z 10003780 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000027b0       ?Open@CReg@@QAAHPAUHKEY__@@PBGK@Z 100037b0 f i s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002818       ?ReadWord@CSDHCSlotBase@@IAAGK@Z 10003818 f i s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002824       ??1CSDHCBase@@UAA@XZ       10003824 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:000028e0       ?Init@CSDHCBase@@UAAHPBG@Z 100038e0 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002b18       ?CreateSDHCControllerObject@CSDHCBase@@SAPAV1@PBG@Z 10003b18 f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002c54       ??_ECSDHCBase@@UAAPAXI@Z   10003c54 f i s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002c54       ??_GCSDHCBase@@UAAPAXI@Z   10003c54 f i s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002c7c       ?HandleInterrupt@CSDHCBase@@MAAXXZ 10003c7c f   s3c6410_hsmmc_ch0_lib:sdhc.obj
+ 0001:00002d64       ??0CSDHCSlotBase@@QAA@XZ   10003d64 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002dfc       ?GetPowerState@CSDHCSlotBase@@UAA?AW4_CEDEVICE_POWER_STATE@@XZ 10003dfc f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002e04       ?GetPowerUpRequirement@CSDHCSlotBase@@UAA?AW4_CEDEVICE_POWER_STATE@@XZ 10003e04 f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002e0c       ?NeedsServicing@CSDHCSlotBase@@UAAHXZ 10003e0c f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002e1c       ?GetPowerSupplyRampUpMs@CSDHCSlotBase@@MAAKXZ 10003e1c f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002e3c       ?SetInterruptEvent@CSDHCSlotBase@@MAAXXZ 10003e3c f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002e50       ??1CSDHCSlotBase@@UAA@XZ   10003e50 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002e60       ?Init@CSDHCSlotBase@@UAAHKPCEPAU_SDCARD_HC_CONTEXT@@KPAXW4_INTERFACE_TYPE@@KPAVCReg@@@Z 10003e60 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002fb0       ?Stop@CSDHCSlotBase@@UAAJXZ 10003fb0 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00002ff8       ?GetSlotInfo@CSDHCSlotBase@@MAAJPAU_SDCARD_HC_SLOT_INFO@@@Z 10003ff8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000030ac       ?SlotOptionHandler@CSDHCSlotBase@@UAAJW4_SD_SLOT_OPTION_CODE@@PAXK@Z 100040ac f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003348       ?DetermineMaxClockRate@CSDHCSlotBase@@MAAKXZ 10004348 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000033b4       ?DetermineMaxBlockLen@CSDHCSlotBase@@MAAKXZ 100043b4 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000033f8       ?DetermineTimeoutControl@CSDHCSlotBase@@MAAKXZ 100043f8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003450       ?DetermineWakeupSources@CSDHCSlotBase@@MAAKXZ 10004450 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003474       ?SetPowerState@CSDHCSlotBase@@MAAXW4_CEDEVICE_POWER_STATE@@@Z 10004474 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000034b8       ?PowerDown@CSDHCSlotBase@@UAAXXZ 100044b8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000351c       ?EnableSDIOInterrupts@CSDHCSlotBase@@MAAXH@Z 1000451c f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003574       ?HandleTransferDone@CSDHCSlotBase@@MAAXXZ 10004574 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000368c       ?UseDmaForRequest@CSDHCSlotBase@@MAAHPAU_SD_BUS_REQUEST@@@Z 1000468c f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000036bc       ?AllocPhysBuffer@CSDHCSlotBase@@MAAPAXIPAK@Z 100046bc f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003708       ?FreePhysBuffer@CSDHCSlotBase@@MAAXPAX@Z 10004708 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000371c       ?IndicateSlotStateChange@CSDHCSlotBase@@MAAXW4_SD_SLOT_EVENT@@@Z 1000471c f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003738       ?GetAndLockCurrentRequest@CSDHCSlotBase@@MAAPAU_SD_BUS_REQUEST@@XZ 10004738 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003750       ?PowerUpDown@CSDHCSlotBase@@MAAXHH@Z 10004750 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003768       ?DetermineVddWindows@CSDHCSlotBase@@MAAKXZ 10004768 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003794       ?GetDesiredVddWindow@CSDHCSlotBase@@MAAKXZ 10004794 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000037c0       ?GetMaxVddWindow@CSDHCSlotBase@@MAAKXZ 100047c0 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000037ec       ??$WaitForReg@K@CSDHCSlotBase@@IAAHP80@AAKK@ZKKKK@Z 100047ec f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003878       ??$WaitForReg@E@CSDHCSlotBase@@IAAHP80@AAEK@ZKEEK@Z 10004878 f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003904       ??$WaitForReg@G@CSDHCSlotBase@@IAAHP80@AAGK@ZKGGK@Z 10004904 f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003994       ?ReadByte@CSDHCSlotBase@@IAAEK@Z 10004994 f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000039a0       ?ReadDword@CSDHCSlotBase@@IAAKK@Z 100049a0 f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000039ac       ?Start@CSDHCSlotBase@@UAAJXZ 100049ac f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003a24       ?SetVoltage@CSDHCSlotBase@@MAAXK@Z 10004a24 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003a90       ?SetInterface@CSDHCSlotBase@@MAAXPAU_SD_CARD_INTERFACE_EX@@@Z 10004a90 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003b04       ?SaveInterReg@CSDHCSlotBase@@UAAXXZ 10004b04 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003cb0       ?RestoreInterfaceReg@CSDHCSlotBase@@UAAXXZ 10004cb0 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003dd0       ?PowerUp@CSDHCSlotBase@@UAAXXZ 10004dd0 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003e68       ?BusRequestHandler@CSDHCSlotBase@@UAAJPAU_SD_BUS_REQUEST@@@Z 10004e68 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00003fa8       ?SubmitBusRequestHandler@CSDHCSlotBase@@MAAJPAU_SD_BUS_REQUEST@@@Z 10004fa8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000042fc       ?PollingForCommandComplete@CSDHCSlotBase@@MAAHXZ 100052fc f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000043e8       ?HandleInterrupt@CSDHCSlotBase@@UAAXXZ 100053e8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000045c0       ?HandleRemoval@CSDHCSlotBase@@MAAXH@Z 100055c0 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000047a0       ?HandleInsertion@CSDHCSlotBase@@MAAXXZ 100057a0 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000497c       ?HandleCommandComplete@CSDHCSlotBase@@MAAHXZ 1000597c f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00004ac4       ?HandleErrors@CSDHCSlotBase@@MAAXXZ 10005ac4 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00004ce8       ?HandleReadReady@CSDHCSlotBase@@MAAXXZ 10005ce8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00004e50       ?HandleWriteReady@CSDHCSlotBase@@MAAXXZ 10005e50 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00004fac       ?HandleDma@CSDHCSlotBase@@MAAXXZ 10005fac f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005000       ?SetHardwarePowerState@CSDHCSlotBase@@MAAXW4_CEDEVICE_POWER_STATE@@@Z 10006000 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005120       ?IsOnlySDIOInterrupt@CSDHCSlotBase@@QAAHXZ 10006120 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005140       ?DoEnableSDIOInterrupts@CSDHCSlotBase@@MAAXH@Z 10006140 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005190       ?SoftwareReset@CSDHCSlotBase@@MAAHE@Z 10006190 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000051e8       ?EnableLED@CSDHCSlotBase@@MAAXH@Z 100061e8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005208       ?IndicateBusRequestComplete@CSDHCSlotBase@@MAAXPAU_SD_BUS_REQUEST@@J@Z 10006208 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000052d8       ?SetClockRate@CSDHCSlotBase@@MAAXPAK@Z 100062d8 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005350       ?SDClockOn@CSDHCSlotBase@@MAAXXZ 10006350 f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000053bc       ?SDClockOff@CSDHCSlotBase@@MAAXXZ 100063bc f   s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:000053cc       ?GetCapabilities@CSDHCSlotBase@@MAA?AT__SSDHC_CAPABILITIES@@XZ 100063cc f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005400       ?GetSDHCVersion@CSDHCSlotBase@@MAA?AT__SSDHC_VERSION@@XZ 10006400 f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:0000541c       ?IsWriteProtected@CSDHCSlotBase@@MAAHXZ 1000641c f i s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0001:00005434       BusTransBusAddrToVirtual   10006434 f   ceddk:CEDDK.dll
+ 0001:00005444       BusTransBusAddrToStatic    10006444 f   ceddk:CEDDK.dll
+ 0001:00005454       MmUnmapIoSpace             10006454 f   ceddk:CEDDK.dll
+ 0001:00005464       SetDevicePowerState        10006464 f   ceddk:CEDDK.dll
+ 0001:00005474       CloseBusAccessHandle       10006474 f   ceddk:CEDDK.dll
+ 0001:00005484       CreateBusAccessHandle      10006484 f   ceddk:CEDDK.dll
+ 0001:00005494       TranslateSystemAddr        10006494 f   ceddk:CEDDK.dll
+ 0001:000054a4       EnterCriticalSection       100064a4 f   coredll:COREDLL.dll
+ 0001:000054b4       LeaveCriticalSection       100064b4 f   coredll:COREDLL.dll
+ 0001:000054c4       ??3@YAXPAX@Z               100064c4 f   coredll:COREDLL.dll
+ 0001:000054d4       NKDbgPrintfW               100064d4 f   coredll:COREDLL.dll
+ 0001:000054e4       ??2@YAPAXI@Z               100064e4 f   coredll:COREDLL.dll
+ 0001:000054f4       DisableThreadLibraryCalls  100064f4 f   coredll:COREDLL.dll
+ 0001:00005504       SetLastError               10006504 f   coredll:COREDLL.dll
+ 0001:00005514       EventModify                10006514 f   coredll:COREDLL.dll
+ 0001:00005524       LocalFree                  10006524 f   coredll:COREDLL.dll
+ 0001:00005534       RegCloseKey                10006534 f   coredll:COREDLL.dll
+ 0001:00005544       RegQueryValueExW           10006544 f   coredll:COREDLL.dll
+ 0001:00005554       _purecall                  10006554 f   coredll:COREDLL.dll
+ 0001:00005564       SetInterruptEvent          10006564 f   coredll:COREDLL.dll
+ 0001:00005574       CreateThread               10006574 f   coredll:COREDLL.dll
+ 0001:00005584       InterruptInitialize        10006584 f   coredll:COREDLL.dll
+ 0001:00005594       CreateEventW               10006594 f   coredll:COREDLL.dll
+ 0001:000055a4       CloseHandle                100065a4 f   coredll:COREDLL.dll
+ 0001:000055b4       WaitForSingleObject        100065b4 f   coredll:COREDLL.dll
+ 0001:000055c4       InterruptDisable           100065c4 f   coredll:COREDLL.dll
+ 0001:000055d4       KernelIoControl            100065d4 f   coredll:COREDLL.dll
+ 0001:000055e4       KernelLibIoControl         100065e4 f   coredll:COREDLL.dll
+ 0001:000055f4       LoadIntChainHandler        100065f4 f   coredll:COREDLL.dll
+ 0001:00005604       DDKReg_GetIsrInfo          10006604 f   coredll:COREDLL.dll
+ 0001:00005614       DDKReg_GetWindowInfo       10006614 f   coredll:COREDLL.dll
+ 0001:00005624       FreeIntChainHandler        10006624 f   coredll:COREDLL.dll
+ 0001:00005634       InterruptDone              10006634 f   coredll:COREDLL.dll
+ 0001:00005644       CeSetThreadPriority        10006644 f   coredll:COREDLL.dll
+ 0001:00005654       memset                     10006654 f   coredll:COREDLL.dll
+ 0001:00005664       RegOpenKeyExW              10006664 f   coredll:COREDLL.dll
+ 0001:00005674       LocalAlloc                 10006674 f   coredll:COREDLL.dll
+ 0001:00005684       OpenDeviceKey              10006684 f   coredll:COREDLL.dll
+ 0001:00005694       wcsncpy                    10006694 f   coredll:COREDLL.dll
+ 0001:000056a4       FreeLibrary                100066a4 f   coredll:COREDLL.dll
+ 0001:000056b4       GetProcAddressW            100066b4 f   coredll:COREDLL.dll
+ 0001:000056c4       LoadLibraryW               100066c4 f   coredll:COREDLL.dll
+ 0001:000056d4       Sleep                      100066d4 f   coredll:COREDLL.dll
+ 0001:000056e4       SetKMode                   100066e4 f   coredll:COREDLL.dll
+ 0001:000056f4       SetProcPermissions         100066f4 f   coredll:COREDLL.dll
+ 0001:00005704       AllocPhysMem               10006704 f   coredll:COREDLL.dll
+ 0001:00005714       FreePhysMem                10006714 f   coredll:COREDLL.dll
+ 0001:00005724       GetTickCount               10006724 f   coredll:COREDLL.dll
+ 0001:00005734       __rt_udiv                  10006734 f   coredll:COREDLL.dll
+ 0001:00005744       __C_specific_handler       10006744 f   coredll:COREDLL.dll
+ 0001:00005754       memcpy                     10006754 f   coredll:COREDLL.dll
+ 0001:00005764       DrvLib_MapIoSpace          10006764 f   DriverLib:DriverLib_mem.obj
+ 0001:00005848       DrvLib_UnmapIoSpace        10006848 f   DriverLib:DriverLib_mem.obj
+ 0001:00005874       __security_check_cookie    10006874     corelibc:armsecgs.obj
+ 0001:00005888       __gsfailure                10006888     corelibc:armsecgs.obj
+ 0001:000058cc       __security_init_cookie     100068cc f   corelibc:seccinit.obj
+ 0001:0000591c       SDInitializeCardLib        1000691c f   sdcardlib:sdmemapi.obj
+ 0001:00005954       SDDeinitializeCardLib      10006954 f   sdcardlib:sdmemapi.obj
+ 0001:0000597c       SDProcessException         1000697c f   sdcardlib:sddebug.obj
+ 0001:00005bdc       SDPerformSafeCopy          10006bdc f   sdcardlib:sddebug.obj
+ 0001:00005c8c       svsutil_Initialize         10006c8c f   sdcardlib:utilmem.obj
+ 0001:00005c90       svsutil_DeInitialize       10006c90 f   sdcardlib:utilmem.obj
+ 0001:00005c94       svsutil_Alloc              10006c94 f   sdcardlib:utilmem.obj
+ 0001:00005ca4       svsutil_ReAlloc            10006ca4 f   sdcardlib:utilmem.obj
+ 0001:00005cb4       svsutil_Free               10006cb4 f   sdcardlib:utilmem.obj
+ 0001:00005cc4       SDHCDInitializeHCLib       10006cc4 f   sdhclib:sdhclib.obj
+ 0001:00005ce8       SDHCDDeinitializeHCLib     10006ce8 f   sdhclib:sdhclib.obj
+ 0001:00005cf0       SDHCDAllocateContext       10006cf0 f   sdhclib:sdhclib.obj
+ 0001:00005d24       SDHCDDeleteContext         10006d24 f   sdhclib:sdhclib.obj
+ 0001:00005d44       SDHCDRegisterHostController 10006d44 f   sdhclib:sdhclib.obj
+ 0001:00005d64       SDHCDDeregisterHostController 10006d64 f   sdhclib:sdhclib.obj
+ 0001:00005d84       SDHCDIndicateSlotStateChange 10006d84 f   sdhclib:sdhclib.obj
+ 0001:00005da4       SDHCDIndicateBusRequestComplete 10006da4 f   sdhclib:sdhclib.obj
+ 0001:00005dc4       SDHCDGetAndLockCurrentRequest 10006dc4 f   sdhclib:sdhclib.obj
+ 0001:00005de4       SDHCDPowerUpDown           10006de4 f   sdhclib:sdhclib.obj
+ 0001:00005e04       SDHCDGetHCFunctions        10006e04 f   sdbus:SDBus.dll
+ 0001:00005e14       VirtualFree                10006e14 f   coredll:COREDLL.dll
+ 0001:00005e24       VirtualCopy                10006e24 f   coredll:COREDLL.dll
+ 0001:00005e34       VirtualAlloc               10006e34 f   coredll:COREDLL.dll
+ 0001:00005e44       __report_gsfailure         10006e44 f   coredll:COREDLL.dll
+ 0001:00005e54       __security_gen_cookie      10006e54 f   coredll:COREDLL.dll
+ 0001:00005e64       malloc                     10006e64 f   coredll:COREDLL.dll
+ 0001:00005e74       realloc                    10006e74 f   coredll:COREDLL.dll
+ 0001:00005e84       free                       10006e84 f   coredll:COREDLL.dll
+ 0001:00005ed0       __IMPORT_DESCRIPTOR_CEDDK  10006ed0     ceddk:CEDDK.dll
+ 0001:00005ee4       __IMPORT_DESCRIPTOR_COREDLL 10006ee4     coredll:COREDLL.dll
+ 0001:00005ef8       __IMPORT_DESCRIPTOR_SDBus  10006ef8     sdbus:SDBus.dll
+ 0001:00005f0c       __NULL_IMPORT_DESCRIPTOR   10006f0c     ceddk:CEDDK.dll
+ 0002:00000000       __imp_BusTransBusAddrToStatic 10008000     ceddk:CEDDK.dll
+ 0002:00000004       __imp_MmUnmapIoSpace       10008004     ceddk:CEDDK.dll
+ 0002:00000008       __imp_SetDevicePowerState  10008008     ceddk:CEDDK.dll
+ 0002:0000000c       __imp_CloseBusAccessHandle 1000800c     ceddk:CEDDK.dll
+ 0002:00000010       __imp_CreateBusAccessHandle 10008010     ceddk:CEDDK.dll
+ 0002:00000014       __imp_TranslateSystemAddr  10008014     ceddk:CEDDK.dll
+ 0002:00000018       __imp_BusTransBusAddrToVirtual 10008018     ceddk:CEDDK.dll
+ 0002:0000001c       \177CEDDK_NULL_THUNK_DATA  1000801c     ceddk:CEDDK.dll
+ 0002:00000020       __imp_EnterCriticalSection 10008020     coredll:COREDLL.dll
+ 0002:00000024       __imp_LeaveCriticalSection 10008024     coredll:COREDLL.dll
+ 0002:00000028       __imp_??3@YAXPAX@Z         10008028     coredll:COREDLL.dll
+ 0002:0000002c       __imp_NKDbgPrintfW         1000802c     coredll:COREDLL.dll
+ 0002:00000030       __imp_??2@YAPAXI@Z         10008030     coredll:COREDLL.dll
+ 0002:00000034       __imp_DisableThreadLibraryCalls 10008034     coredll:COREDLL.dll
+ 0002:00000038       __imp_SetLastError         10008038     coredll:COREDLL.dll
+ 0002:0000003c       __imp_EventModify          1000803c     coredll:COREDLL.dll
+ 0002:00000040       __imp_LocalFree            10008040     coredll:COREDLL.dll
+ 0002:00000044       __imp_RegCloseKey          10008044     coredll:COREDLL.dll
+ 0002:00000048       __imp_RegQueryValueExW     10008048     coredll:COREDLL.dll
+ 0002:0000004c       __imp__purecall            1000804c     coredll:COREDLL.dll
+ 0002:00000050       __imp_SetInterruptEvent    10008050     coredll:COREDLL.dll
+ 0002:00000054       __imp_CreateThread         10008054     coredll:COREDLL.dll
+ 0002:00000058       __imp_InterruptInitialize  10008058     coredll:COREDLL.dll
+ 0002:0000005c       __imp_CreateEventW         1000805c     coredll:COREDLL.dll
+ 0002:00000060       __imp_CloseHandle          10008060     coredll:COREDLL.dll
+ 0002:00000064       __imp_WaitForSingleObject  10008064     coredll:COREDLL.dll
+ 0002:00000068       __imp_InterruptDisable     10008068     coredll:COREDLL.dll
+ 0002:0000006c       __imp_KernelIoControl      1000806c     coredll:COREDLL.dll
+ 0002:00000070       __imp_KernelLibIoControl   10008070     coredll:COREDLL.dll
+ 0002:00000074       __imp_LoadIntChainHandler  10008074     coredll:COREDLL.dll
+ 0002:00000078       __imp_DDKReg_GetIsrInfo    10008078     coredll:COREDLL.dll
+ 0002:0000007c       __imp_DDKReg_GetWindowInfo 1000807c     coredll:COREDLL.dll
+ 0002:00000080       __imp_FreeIntChainHandler  10008080     coredll:COREDLL.dll
+ 0002:00000084       __imp_InterruptDone        10008084     coredll:COREDLL.dll
+ 0002:00000088       __imp_CeSetThreadPriority  10008088     coredll:COREDLL.dll
+ 0002:0000008c       __imp_memset               1000808c     coredll:COREDLL.dll
+ 0002:00000090       __imp_RegOpenKeyExW        10008090     coredll:COREDLL.dll
+ 0002:00000094       __imp_LocalAlloc           10008094     coredll:COREDLL.dll
+ 0002:00000098       __imp_OpenDeviceKey        10008098     coredll:COREDLL.dll
+ 0002:0000009c       __imp_wcsncpy              1000809c     coredll:COREDLL.dll
+ 0002:000000a0       __imp_FreeLibrary          100080a0     coredll:COREDLL.dll
+ 0002:000000a4       __imp_GetProcAddressW      100080a4     coredll:COREDLL.dll
+ 0002:000000a8       __imp_LoadLibraryW         100080a8     coredll:COREDLL.dll
+ 0002:000000ac       __imp_Sleep                100080ac     coredll:COREDLL.dll
+ 0002:000000b0       __imp_SetKMode             100080b0     coredll:COREDLL.dll
+ 0002:000000b4       __imp_SetProcPermissions   100080b4     coredll:COREDLL.dll
+ 0002:000000b8       __imp_AllocPhysMem         100080b8     coredll:COREDLL.dll
+ 0002:000000bc       __imp_FreePhysMem          100080bc     coredll:COREDLL.dll
+ 0002:000000c0       __imp_GetTickCount         100080c0     coredll:COREDLL.dll
+ 0002:000000c4       __imp___rt_udiv            100080c4     coredll:COREDLL.dll
+ 0002:000000c8       __imp___C_specific_handler 100080c8     coredll:COREDLL.dll
+ 0002:000000cc       __imp_memcpy               100080cc     coredll:COREDLL.dll
+ 0002:000000d0       __imp_realloc              100080d0     coredll:COREDLL.dll
+ 0002:000000d4       __imp_malloc               100080d4     coredll:COREDLL.dll
+ 0002:000000d8       __imp_VirtualFree          100080d8     coredll:COREDLL.dll
+ 0002:000000dc       __imp_VirtualCopy          100080dc     coredll:COREDLL.dll
+ 0002:000000e0       __imp_VirtualAlloc         100080e0     coredll:COREDLL.dll
+ 0002:000000e4       __imp___report_gsfailure   100080e4     coredll:COREDLL.dll
+ 0002:000000e8       __imp___security_gen_cookie 100080e8     coredll:COREDLL.dll
+ 0002:000000ec       __imp_free                 100080ec     coredll:COREDLL.dll
+ 0002:000000f0       \177COREDLL_NULL_THUNK_DATA 100080f0     coredll:COREDLL.dll
+ 0002:000000f4       __imp_SDHCDGetHCFunctions  100080f4     sdbus:SDBus.dll
+ 0002:000000f8       \177SDBus_NULL_THUNK_DATA  100080f8     sdbus:SDBus.dll
+ 0002:00000100       ?g_initialInsertion@@3KA   10008100     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0002:00000104       __security_cookie_complement 10008104     corelibc:seccook.obj
+ 0002:00000108       __security_cookie          10008108     corelibc:seccook.obj
+ 0002:0000010c       g_SDClientApiFunctions     1000810c     sdcardlib:sdcardapistubs.obj
+ 0002:0000013c       g_funcRealloc              1000813c     sdcardlib:utilmem.obj
+ 0002:00000140       g_funcFree                 10008140     sdcardlib:utilmem.obj
+ 0002:00000144       g_funcAlloc                10008144     sdcardlib:utilmem.obj
+ 0002:00000148       ?rsvregval@@3PAKA          10008148     s3c6410_hsmmc_ch0_lib:sdhcslot.obj
+ 0002:00000554       g_pvFreeData               10008554     sdcardlib:utilmem.obj
+ 0002:00000558       g_pvAllocData              10008558     sdcardlib:utilmem.obj
+
+ entry point at        0001:00001a88
+
+ Static symbols
+

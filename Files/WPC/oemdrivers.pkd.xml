@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright (c) Microsoft Corporation.  All rights reserved.
+-->
+<!--
+Use of this source code is subject to the terms of the Microsoft end-user
+license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+If you did not accept the terms of the EULA, you are not authorized to use
+this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+install media.
+-->
+<Package xmlns="http://schemas.microsoft.com/embedded/2004/10/ImageUpdate">
+  <Name>OEMDrivers</Name>
+  <PackageGuid>35D23DD9-E722-45d0-B57A-352FACB442E4</PackageGuid>
+  <PackageVersion Major="$(_MAJORVERSION)" Minor="$(_MINORVERSION)" BuildNumber="$(_BUILDNUMBER)" QFELevel="$(_QFELEVEL)" />
+  <Interface>
+    <InterfaceGuid>A3B86CF7-0A1A-4df0-B0C4-D74AFE55B5F1</InterfaceGuid>
+    <InterfaceVersion Major="0" Minor="0" BuildNumber="0" QFELevel="0" />
+  </Interface>
+  <Associations>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0409_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0409" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0407_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0407" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0804_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0804" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0809_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0809" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_040C_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="040C" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0410_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0410" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0C0A_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0C0A" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0412_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0412" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0411_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0411" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0404_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0404" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0413_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0413" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0406_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0406" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_041D_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="041D" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_040B_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="040B" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0414_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0414" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0416_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0416" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0816_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0816" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0405_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0405" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0418_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0418" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_041B_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="041B" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0415_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0415" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_040E_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="040E" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_041F_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="041F" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0419_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0419" />
+    </Association>
+    <Association>
+      <AssociationGuid>$(GUID_OEM_LANG_0408_PKD)</AssociationGuid>
+      <AssociationType Key="LOCALE" Value="0408" />
+    </Association>
+  </Associations>  
+    <CertPaths>
+IF IMGPKGTESTCERTS
+    <path>OemTestCA_Root.cer</path>
+ENDIF IMGPKGTESTCERTS
+IF IMGOEMDOGFOODCERTS
+    <path>DogfoodOEMCA_Root.cer</path>
+ENDIF IMGOEMDOGFOODCERTS
+IF IMGPKGTESTCERTS !
+IF IMGOEMDOGFOODCERTS !
+    <path>OEMShipCA_Root.cer</path>
+ENDIF IMGOEMDOGFOODCERTS !
+ENDIF IMGPKGTESTCERTS !
+  </CertPaths>
+</Package>

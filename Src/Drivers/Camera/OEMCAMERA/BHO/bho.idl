@@ -1,0 +1,36 @@
+//
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+//
+//
+// Use of this source code is subject to the terms of the Microsoft end-user
+// license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+// If you did not accept the terms of the EULA, you are not authorized to use
+// this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+// install media.
+//
+
+// bho.idl : IDL source for bho.dll
+//
+// This file will be processed by the MIDL tool to
+// produce the type library (bho.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+        [
+		object,
+		uuid(EFA49367-861E-40b7-BF10-25CAEC891BC9),
+		pointer_default(unique)
+	]
+        interface IBHOTest: IObjectWithSite
+	{
+	};
+
+        [
+            uuid(0DA50071-0B15-4702-A36A-C78C9ADAF47F),
+	]
+
+        coclass IBHOObj
+        {
+            [default] interface IBHOTest;
+        };

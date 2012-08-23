@@ -1,0 +1,54 @@
+!if 0
+Copyright (c) Cambridge Silicon Radio.  All rights reserved.
+!endif
+!if 0
+Use of this source code is subject to the terms of the Microsoft end-user
+license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+If you did not accept the terms of the EULA, you are not authorized to use
+this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+install media.
+!endif
+
+#!if "$(BSP_NOWLAN)" == "1"
+#SKIPBUILD=1
+#!endif
+
+TARGETNAME=ufsdio
+TARGETTYPE=DYNLINK
+RELEASETYPE=LOCAL
+DEFFILE=ufsdio.def
+
+CDEFINES=$(CDEFINES) -DWINCEOEM# -DTRACE_ENABLED=1
+
+
+!if "$(UNIFI_MAJOR_VERSION)" != ""
+CDEFINES=$(CDEFINES) -DUNIFI_MAJOR_VERSION=$(UNIFI_MAJOR_VERSION) -DUNIFI_MINOR_VERSION=$(UNIFI_MINOR_VERSION) -DUNIFI_REVISION=$(UNIFI_REVISION) -DUNIFI_BUILD_ID=$(UNIFI_BUILD_ID)
+RDEFINES=$(RDEFINES) -DUNIFI_MAJOR_VERSION=$(UNIFI_MAJOR_VERSION) -DUNIFI_MINOR_VERSION=$(UNIFI_MINOR_VERSION) -DUNIFI_REVISION=$(UNIFI_REVISION) -DUNIFI_BUILD_ID=$(UNIFI_BUILD_ID)
+!endif
+
+
+INCLUDES= \
+  $(_PUBLICROOT)\common\sdk\inc; \
+  $(_PUBLICROOT)\common\ddk\inc; \
+  $(_PUBLICROOT)\common\oak\inc;
+
+TARGETLIBS= \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_TGTCPU)\$(WINCEDEBUG)\ceddk.lib \
+  $(_PROJECTROOT)\cesysgen\sdk\lib\$(_TGTCPU)\$(WINCEDEBUG)\coredll.lib \
+    
+SOURCELIBS= \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_TGTCPU)\$(WINCEDEBUG)\sdcardlib.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_TGTCPU)\$(WINCEDEBUG)\sdhclib.lib \
+  $(_PROJECTROOT)\cesysgen\oak\lib\$(_TGTCPU)\$(WINCEDEBUG)\sdbus2.lib \
+
+
+SOURCES= \
+    ../Main.cpp \
+    ../sdio_now.c \
+    ../NkDbgPrintfW.cpp \
+    ../Version.rc \
+ 
+
+WARNLEVEL=3
+OPTIMIZE_FAVOR=SPEED
+   

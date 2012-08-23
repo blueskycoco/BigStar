@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright (c) Microsoft Corporation.  All rights reserved.
+-->
+<!--
+Use of this source code is subject to the terms of the Microsoft end-user
+license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+If you did not accept the terms of the EULA, you are not authorized to use
+this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+install media.
+-->
+<Package xmlns="http://schemas.microsoft.com/embedded/2004/10/ImageUpdate">
+  <Name>default</Name>
+  <PackageGuid>72C74FB8-BC87-4c94-AEDF-FD62598C920F</PackageGuid>
+  <PackageVersion Major="0" Minor="0" BuildNumber="0" QFELevel="0" />
+</Package>

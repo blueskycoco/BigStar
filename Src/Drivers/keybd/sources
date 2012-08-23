@@ -1,0 +1,35 @@
+!if 0
+    File:   sources
+
+    Author: jeffmi
+
+    Copyright (c) 1995-2002 Microsoft Corporation.  All rights reserved.
+!endif
+
+RELEASETYPE=PLATFORM
+TARGETNAME=keybd_gpio
+TARGETTYPE=DYNLINK
+DLLENTRY=DllEntry
+
+TARGETLIBS= \
+    $(_SYSGENOAKROOT)\lib\$(_CPUINDPATH)\ceddk.lib\
+    $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\DriverLib.lib\
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\LayoutManager.lib \
+    $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\Nop_KbdCommon.lib \
+    $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\NumPadRmp.lib
+
+
+MSC_WARNING_LEVEL = $(MSC_WARNING_LEVEL) /W3 /WX
+!IF "$(IMGULDR)" == "1"
+CDEFINES=$(CDEFINES) -DIMGULDR
+!ENDIF
+INCLUDES= \
+    $(_COMMONOAKROOT)\inc; \
+    $(_PUBLICROOT)\common\oak\inc;$(_PUBLICROOT)\common\sdk\inc;$(_PUBLICROOT)\common\ddk\inc;	\
+    ..\..\inc
+      
+SOURCES= \
+    keybd_gpio.c
+    
+

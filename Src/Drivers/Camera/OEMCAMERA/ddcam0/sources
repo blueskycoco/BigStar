@@ -1,0 +1,36 @@
+!if 0
+
+ Copyright ?002 Intel Corporation
+
+!endif
+
+!if "$(BSP_NOCAMERA)" == "1"
+SKIPBUILD=1
+!endif
+
+
+SYNCHRONIZE_DRAIN=1
+
+TARGETNAME=DDCam
+TARGETTYPE=PROGRAM
+RELEASETYPE=PLATFORM
+
+
+INCLUDES= \
+    $(_PUBLICROOT)\shellw\sdk\inc; \
+    $(_PUBLICROOT)\Directx\sdk\inc; \
+    $(_PUBLICROOT)\common\sdk\inc; \
+    $(_PUBLICROOT)\ie\sdk\inc; \
+    $(_PUBLICROOT)\common\oak\inc;\
+
+
+
+SOURCELIBS=\
+		   $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+		   $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\aygshell.lib \
+
+ 
+SOURCES= \
+    DDCam.cpp\
+    DDCam.rc
+

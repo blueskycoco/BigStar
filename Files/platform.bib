@@ -1,0 +1,340 @@
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;
+; Use of this source code is subject to the terms of the Microsoft end-user
+; license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+; If you did not accept the terms of the EULA, you are not authorized to use
+; this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+; install media.
+;
+
+MODULES
+
+;   Name            		Path                                    Memory Type
+;   --------------  		----------------------------------		-----------
+
+; -----------------------------------------------------------------------------
+; GWES drivers
+;
+
+;------------- Display Driver -------------------------------------------------
+; @CESYSGEN IF CE_MODULES_DISPLAY
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NODISPLAY !
+
+	s3c6410_disp.dll		$(_FLATRELEASEDIR)\s3c6410_disp.dll			NK	SH
+
+IF DPI=131
+	gxdma.dll			$(_FLATRELEASEDIR)\gxdma.dll				NK	SH
+ENDIF ; DPI=131
+IF DPI=192
+	gxdma.dll			$(_FLATRELEASEDIR)\gxdma.dll				NK	SH
+ENDIF ; DPI=192
+
+ENDIF BSP_NODISPLAY !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_DISPLAY
+;---------------------------------------------------------------------------
+
+;-------- I2C Driver ---------------------------------------------------------------------------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOI2C !
+	s3c6410_iic.dll		$(_FLATRELEASEDIR)\s3c6410_iic.dll					NK	SH
+ENDIF BSP_NOI2C !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+;-----------------------------------------------------------------------------------------------
+
+;-------- Camera Driver -----------------------------------------------------------------------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOCAMERA !
+	camera.dll		$(_FLATRELEASEDIR)\camera.dll			NK	SH
+ENDIF BSP_NOCAMERA !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+;-----------------------------------------------------------------------------------------------
+
+;------------- Key Board Driver -----------------------------------------------
+; @CESYSGEN IF CE_MODULES_KEYBD || CE_MODULES_POINTER
+IF BSP_NOKEYBD !
+	keybd_gpio.dll	$(_FLATRELEASEDIR)\keybd_gpio.dll		NK	SH
+ENDIF BSP_NOKEYBD !
+; @CESYSGEN ENDIF CE_MODULES_KEYBD || CE_MODULES_POINTER
+;-------------------------------------------------------------------------------
+
+;-- Touch driver ---------------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_POINTER
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOTOUCH !
+    touch.dll      $(_FLATRELEASEDIR)\s3c6410_touch.dll                 NK  SH
+ENDIF BSP_NOTOUCH !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_POINTER
+;-------------------------------------------------------------------------------
+
+;-- SD driver ------------------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_SDBUS
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+
+;-------- 6410 HSMMC -----------------------------------------------------------------------
+IF BSP_NOHSMMC_CH0 !
+   s3c6410_hsmmc_ch0.dll    $(_FLATRELEASEDIR)\s3c6410_hsmmc_ch0.dll        NK  SH
+ENDIF BSP_NOHSMMC_CH0 !
+IF BSP_NOHSMMC_CH1 !
+   s3c6410_hsmmc_ch1.dll    $(_FLATRELEASEDIR)\s3c6410_hsmmc_ch1.dll        NK  SH
+ENDIF BSP_NOHSMMC_CH1 !
+
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_SDBUS
+;-------------------------------------------------------------------------------
+
+;-- Nand Flash driver ----------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_FATFSD || CE_MODULES_TFAT || CE_MODULES_IMGFS
+; @CESYSGEN IF CE_MODULES_FSDMGR
+; @XIPREGION IF PACKAGE_OEMXIPKERNEL
+   nandflash.dll			$(_FLATRELEASEDIR)\nandflash.dll			NK SH
+; @XIPREGION ENDIF PACKAGE_OEMXIPKERNEL
+; @CESYSGEN ENDIF CE_MODULES_FSDMGR
+; @CESYSGEN ENDIF CE_MODULES_FATFSD || CE_MODULES_TFAT || CE_MODULES_IMGFS
+;-------------------------------------------------------------------------------
+
+;-- USB driver -----------------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_USBD
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOUSB !
+IF BSP_NOUSBHCD !
+    s3c6410_ohci2.dll   $(_FLATRELEASEDIR)\s3c6410_ohci2.dll       NK  SH
+ENDIF BSP_NOUSBHCD !
+ENDIF BSP_NOUSB !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_USBD
+
+; @CESYSGEN IF CE_MODULES_USBFN
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOUSB !
+IF BSP_NOUSBFN !
+   s3c6410_usbfn.dll       $(_FLATRELEASEDIR)\s3c6410_usbfn.dll       NK  SH
+   BootCompleteApp.exe	   $(_FLATRELEASEDIR)\BootCompleteApp.exe     NK  SH
+ENDIF BSP_NOUSBFN !
+ENDIF BSP_NOUSB !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_USBFN
+;-------------------------------------------------------------------------------
+
+; ------------- Power Button Driver --------------------------------------------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOPWRBTN !
+	smdk6410_PwrBtn.dll	$(_FLATRELEASEDIR)\smdk6410_PwrBtn.dll		NK	SH
+ENDIF BSP_NOPWRBTN !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+;---------------------------------------------------------------------------
+
+; ------------- Power Control Driver --------------------------------------------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+	s3c6410_PwrCon.dll	$(_FLATRELEASEDIR)\s3c6410_PwrCon.dll			NK	SH
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+;---------------------------------------------------------------------------
+
+; ------------- Video Engine Driver --------------------------------------------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+	s3c6410_Video.dll		$(_FLATRELEASEDIR)\s3c6410_Video.dll			NK	SH
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+;---------------------------------------------------------------------------
+
+
+;-- Audio driver ---------------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_WAVEAPI
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOAUDIO !
+IF BSP_AUDIO_AC97 !
+    s3c6410_wavedev.dll		$(_FLATRELEASEDIR)\s3c6410_wavedev_iis.dll			NK	SH
+ENDIF BSP_AUDIO_AC97 !
+
+IF BSP_AUDIO_AC97
+    s3c6410_wavedev.dll		$(_FLATRELEASEDIR)\s3c6410_wavedev_ac97.dll			NK	SH
+ENDIF BSP_AUDIO_AC97
+ENDIF BSP_NOAUDIO !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_WAVEAPI
+;-------------------------------------------------------------------------------
+
+;-- Serial driver --------------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_SERIAL
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOSERIAL !
+    smdk6410_serial.dll     $(_FLATRELEASEDIR)\smdk6410_serial.dll       NK  SH
+ENDIF BSP_NOSERIAL !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_SERIAL
+;-------------------------------------------------------------------------------
+
+
+;-- Battery driver -------------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_BATTDRVR
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOBATTERY !
+    battdrvr.dll            $(_FLATRELEASEDIR)\battdrvr.dll              NK  SH
+ENDIF BSP_NOBATTERY !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_BATTDRVR
+;-------------------------------------------------------------------------------
+
+
+;-- Backlight driver -----------------------------------------------------------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOBACKLIGHT !
+    backlight.dll		$(_FLATRELEASEDIR)\backlight.dll					NK	SH
+ENDIF ; BSP_NOBACKLIGHT !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+;-------------------------------------------------------------------------------
+
+;-- APM6658 driver --------------------------------------------------------------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF IMGULDR !
+IF BSP_NOAPM6658 !
+    ufsdio.dll				$(_FLATRELEASEDIR)\ufsdio.dll					NK	SH    
+    ufmp.dll				$(_FLATRELEASEDIR)\ufmp.dll					NK	SH
+    bthbcsp.dll				$(_FLATRELEASEDIR)\bthbcsp.dll					NK	SH
+ENDIF ; BSP_NOAPM6658
+IF BSP_NOSIM52 !
+    husbcom_SIM52xx.dll				$(_FLATRELEASEDIR)\husbcom_SIM52xx.dll					NK	SH  
+ENDIF ; BSP_NOSIM52
+ENDIF IMGULDR
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+;-------------------------------------------------------------------------------
+
+;-- RIL Driver ------------------------------------------------------------------
+; @CESYSGEN IF CELLCORE_MODULES_RIL
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF IMGNOTPCLOW !
+IF IMGNORILTSP !
+
+IF IMGFAKERIL
+    fakeril.dll         $(_FLATRELEASEDIR)\fakeril.dll          NK S
+ENDIF ; IMGFAKERIL
+
+IF IMGFAKERIL !
+IF IMGTTPCOM !
+    rilgsm.dll          $(_FLATRELEASEDIR)\rilwavecom.dll               NK S
+ENDIF ; IMGTTPCOM !
+IF IMGTTPCOM
+    rilgsm.dll          $(_FLATRELEASEDIR)\rilttpcom.dll        NK S
+    ttpmux.dll          $(_FLATRELEASEDIR)\ttpmux.dll           NK S
+IF PLATFORM_NOTTPGENIE !
+    ttpgenie.dll        $(_FLATRELEASEDIR)\ttpgenie.dll         NK S
+ENDIF ; PLATFORM_NOTTPGENIE !
+ENDIF ; IMGTTPCOM
+
+IF SYSGEN_CDMASKU
+IF IMGSUNDANCE
+    rilcdma.dll         $(_FLATRELEASEDIR)\sundance.dll         NK S
+    swiapi.dll          $(_FLATRELEASEDIR)\swiapi.dll           NK S
+ENDIF ; IMGSUNDANCE
+ENDIF ; SYSGEN_CDMASKU
+ENDIF ; IMGFAKERIL !
+
+ENDIF ; IMGNORILTSP !
+ENDIF ; IMGNOTPCLOW !
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CELLCORE_MODULES_RIL
+;---------------------------------------------------------------------------------------
+
+;--D3DM DRIVER------------------------------------------------------------------
+; @CESYSGEN IF DIRECTX_MODULES_D3DMREF
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_NOD3DM !
+    d3dm_sedrv.dll $(_FLATRELEASEDIR)\d3dm_sedrv.dll NK SH
+ENDIF ;BSP_NOD3DM
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF DIRECTX_MODULES_D3DMREF
+; -----------------------------------------------------------------------------
+
+
+
+;---- Update loader UI ---------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_CEDDK
+IF IMGULDR
+uldrui.dll          $(_FLATRELEASEDIR)\uldrui.dll               NK SH
+ENDIF IMGULDR
+; @CESYSGEN ENDIF CE_MODULES_CEDDK
+;-------------------------------------------------------------------------------
+
+
+
+
+FILES
+;  Name            		Path                                        Memory Type
+;  --------------  		----------------------------------          -----------
+; @XIPREGION IF PACKAGE_OEMDRIVERS
+;	pewcearm.exe		$(_FLATRELEASEDIR)\pewcearm.exe				NK	U
+;	GarField.wmv		$(_FLATRELEASEDIR)\GarField.wmv	 			NK 	U
+;	HSPITestApp.exe		$(_FLATRELEASEDIR)\HSPITestApp.exe 			NK 	U
+
+IF BSP_NOAPM6658 !
+    sta.xbv				$(_FLATRELEASEDIR)\sta.xbv					NK	U    
+    PSConfig.psr				$(_FLATRELEASEDIR)\PSConfig.psr					NK	U
+ENDIF ; BSP_NOAPM6658
+
+IF BSP_NOBACKLIGHT !
+	;backlight.cpl		$(_FLATRELEASEDIR)\backlight.cpl			NK	U
+ENDIF ; BSP_NOBACKLIGHT !
+	SerialPort.exe		$(_FLATRELEASEDIR)\SerialPort.exe			NK	U
+	regedit.exe		$(_FLATRELEASEDIR)\regedit.exe			NK	U
+	STD.exe		$(_FLATRELEASEDIR)\STD.exe			NK	U
+	switch.exe		$(_FLATRELEASEDIR)\switch.exe			NK	U
+	usemynls.exe	$(_FLATRELEASEDIR)\usemynls.exe			NK	U
+	ksphonetic.ttf	$(_FLATRELEASEDIR)\ksphonetic.ttf			NK	U
+	mssancserif.ttf		$(_FLATRELEASEDIR)\mssancserif.ttf			NK	U
+	
+	;baidu
+		BaiduDrv.dll	$(_FLATRELEASEDIR)\BaiduDrv.dll			NK	U
+		BaiduInputhelp.htm	$(_FLATRELEASEDIR)\BaiduInputhelp.htm			NK	U
+		BaiduInputhelp1.bmp	$(_FLATRELEASEDIR)\BaiduInputhelp1.bmp			NK	U
+		BaiduInputhelp2.bmp	$(_FLATRELEASEDIR)\BaiduInputhelp2.bmp			NK	U
+		BaiduInputhelp3.bmp  $(_FLATRELEASEDIR)\BaiduInputhelp3.bmp			NK	U			
+		BaiduInputhelp4.bmp  $(_FLATRELEASEDIR)\BaiduInputhelp4.bmp			NK	U
+		bdfnHooks.dll	$(_FLATRELEASEDIR)\bdfnHooks.dll			NK	U
+		BaiduStart.exe	$(_FLATRELEASEDIR)\BaiduStart.exe			NK	U
+		Default_skin.bdskt	$(_FLATRELEASEDIR)\Default_skin.bdskt			NK	U
+		keycode_def.ini  $(_FLATRELEASEDIR)\keycode_def.ini			NK	U
+		keyicon_def.png	$(_FLATRELEASEDIR)\keyicon_def.png			NK	U
+		keycode_hd9.ini	$(_FLATRELEASEDIR)\keycode_hd9.ini			NK	U
+		keyicon_hd9.png	$(_FLATRELEASEDIR)\keyicon_hd9.png			NK	U
+		keycode_htp.ini	$(_FLATRELEASEDIR)\keycode_htp.ini			NK	U
+		keyicon_htp.png  $(_FLATRELEASEDIR)\keyicon_htp.png			NK	U
+		baidumoren.bdskk	$(_FLATRELEASEDIR)\baidumoren.bdskk			NK	U
+		gebizong.bdskk	$(_FLATRELEASEDIR)\gebizong.bdskk			NK	U
+		hongselanben.bdskk	$(_FLATRELEASEDIR)\hongselanben.bdskk			NK	U
+		jinshulan.bdskk	$(_FLATRELEASEDIR)\jinshulan.bdskk			NK	U
+		qingcaodi.bdskk  $(_FLATRELEASEDIR)\qingcaodi.bdskk			NK	U
+		sanyecao.bdskk	$(_FLATRELEASEDIR)\sanyecao.bdskk			NK	U
+		shuilifang.bdskk	$(_FLATRELEASEDIR)\shuilifang.bdskk			NK	U
+		tianlanshidai.bdskk	$(_FLATRELEASEDIR)\tianlanshidai.bdskk			NK	U
+		yinzhuangsuguo.bdskk	$(_FLATRELEASEDIR)\yinzhuangsuguo.bdskk			NK	U
+		zisemeiying.bdskk  $(_FLATRELEASEDIR)\zisemeiying.bdskk			NK	U
+		key.ini	$(_FLATRELEASEDIR)\key.ini			NK	U
+		key.png	$(_FLATRELEASEDIR)\key.png			NK	U
+		Default_skinw.bdskt	$(_FLATRELEASEDIR)\Default_skinw.bdskt			NK	U
+		_ch3	$(_FLATRELEASEDIR)\_ch3			NK	U
+		app1  $(_FLATRELEASEDIR)\app1			NK	U
+		app2	$(_FLATRELEASEDIR)\app2			NK	U
+		BaiduDll.dll	$(_FLATRELEASEDIR)\BaiduDll.dll			NK	U
+		BaiduSIP.dll	$(_FLATRELEASEDIR)\BaiduSIP.dll			NK	U
+		ch0	$(_FLATRELEASEDIR)\ch0			NK	U
+		ch1  $(_FLATRELEASEDIR)\ch1			NK	U
+		ch2	$(_FLATRELEASEDIR)\ch2			NK	U
+		data.txt	$(_FLATRELEASEDIR)\data.txt			NK	U
+		def	$(_FLATRELEASEDIR)\def			NK	U
+		en1	$(_FLATRELEASEDIR)\en1			NK	U
+		id.txt  $(_FLATRELEASEDIR)\id.txt			NK	U
+		ie.txt	$(_FLATRELEASEDIR)\ie.txt			NK	U
+		Setting.exe	$(_FLATRELEASEDIR)\Setting.exe			NK	U
+		setup.dll	$(_FLATRELEASEDIR)\setup.dll			NK	U
+		sp.ini	$(_FLATRELEASEDIR)\sp.ini			NK	U
+		sym.ini  $(_FLATRELEASEDIR)\sym.ini			NK	U
+		keycode_hu1.ini	$(_FLATRELEASEDIR)\keycode_hu1.ini			NK	U
+		keyicon_hu1.png  $(_FLATRELEASEDIR)\keyicon_hu1.png			NK	U
+
+	;baidu
+; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+
+

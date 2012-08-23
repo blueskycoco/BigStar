@@ -1,0 +1,35 @@
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;
+; Use of this source code is subject to the terms of the Microsoft end-user
+; license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+; If you did not accept the terms of the EULA, you are not authorized to use
+; this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+; install media.
+;
+
+MEMORY
+;   Name      Start     Size      Type
+;   -------   --------  --------  ----
+    PTS       80000000  00020000  RESERVED
+    NBL2      82300000  00020000  RAMIMAGE
+    STACK     82320000  00008000  RESERVED
+    RAM       82330000  00100000  RAM
+
+    DISPLAY   8F000000  01000000  RESERVED
+
+CONFIG
+	COMPRESSION=OFF
+	PROFILE=OFF
+	KERNELFIXUPS=ON
+
+	ROMSTART=82300000
+	ROMWIDTH=32
+	ROMSIZE=0001d800
+
+MODULES
+;   Name        Path                                                               Memory Type
+;   ----------  --------------------------------------------------------------     -----------
+    nk.exe      $(_TARGETPLATROOT)\target\$(_TGTCPU)\$(WINCEDEBUG)\nbl2.exe         NBL2
+

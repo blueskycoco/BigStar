@@ -1,0 +1,4 @@
+LIBRARY      "OEMCameraCapture.DLL"
+
+EXPORTS
+    OEMCameraCapture

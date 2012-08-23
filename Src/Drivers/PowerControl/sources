@@ -1,0 +1,21 @@
+
+TARGETNAME=s3c6410_PwrCon
+TARGETTYPE=DYNLINK
+
+RELEASETYPE=PLATFORM
+
+DLLENTRY=_DllMainCRTStartup
+DEFFILE=power_control.def
+
+!IF "$(BSP_USEDVS)" == "1"
+CDEFINES=$(CDEFINES) -DDVS_EN
+!ENDIF
+
+TARGETLIBS= \
+    $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib	\
+    $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\ceddk.lib
+
+SOURCES= \
+	s3c6410_power_control.c	\
+	power_control.c
+

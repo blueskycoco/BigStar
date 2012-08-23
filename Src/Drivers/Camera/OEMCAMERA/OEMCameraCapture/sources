@@ -1,0 +1,30 @@
+TARGETNAME=OEMCameraCapture
+TARGETTYPE=DYNLINK
+WINCEOEM=1
+
+
+INCLUDES= \
+    $(_PUBLICROOT)\shellw\sdk\inc; \
+    $(_PUBLICROOT)\Directx\sdk\inc; \
+    $(_PUBLICROOT)\common\sdk\inc; \
+    $(_PUBLICROOT)\ie\sdk\inc; \
+    $(_PUBLICROOT)\common\oak\inc;\
+
+
+SOURCELIBS=\
+		   $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+		   $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\aygshell.lib \
+		   $(_PUBLICROOT)\dcom\sdk\lib\$(_CPUINDPATH)\uuid.lib \
+		   $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ole32.lib \
+                   $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\Oleaut32.lib \
+                   $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\strmiids.lib \
+                   $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\strmbase.lib \
+                   $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\dmoguids.lib \
+
+INCLUDES=$(INCLUDES);$(_WINCEROOT)\others\atl\include
+
+SOURCES=\
+    BirdCameraAPI.cpp\
+    OEMCameraCapture.cpp\
+    OEMCameraCapture.rc\
+    CPropertyBag.cpp

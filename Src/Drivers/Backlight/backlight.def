@@ -1,0 +1,13 @@
+LIBRARY backlight
+
+EXPORTS BKL_Init
+	BKL_Deinit
+	BKL_Open
+	BKL_Close 
+	BKL_Read
+	BKL_Write
+	BKL_Seek
+	BKL_PowerDown
+	BKL_PowerUp
+	BKL_IOControl
+

@@ -1,0 +1,25 @@
+#include "resource.h"
+#include "Winnt.h"
+
+/////////////////////////////////////////////////////////////////////////////
+/*/ English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+*/
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+STRINGTABLE 
+{
+    IDS_CAMERA          "Па»ъ"
+}
+
+#endif    // Chinese (P.R.C.) resources

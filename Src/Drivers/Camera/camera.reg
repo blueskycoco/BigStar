@@ -1,0 +1,201 @@
+;
+;	camera registry file
+;	Copyright (C) Lenovo Mobile Corporation
+;	
+;
+
+;----------------------------------------------------------------------------------
+IF BSP_NOCAMERA !
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\CameraDriver]
+   "Prefix"="CAM"
+   "Dll"="camera.dll"
+   "Order"=dword:1
+   "Index"=dword:1
+   "IClass"=multi_sz:"{CB998A05-122C-4166-846A-933E4D7E3C86}","{A32942B7-920C-486b-B0E6-92A702A99B35}"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\DirectX\DirectShow\Capture]
+   "Prefix"="PIN"
+   "Dll"="camera.dll"
+   "IClass"="{C9D092D6-827A-45E2-8144-DE1982BFC3A8}"
+
+[HKEY_LOCAL_MACHINE\Drivers\Capture\Camera]
+   "MemoryModel"=dword:2
+   "PinCount"=dword:3
+ 
+ENDIF BSP_NOCAMERA!
+
+
+
+;----------------------------------------------------------------------------------
+IF IMGCAMERAOEM
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM]
+"BackLight"=dword:78
+"EnableZoom"=dword:1
+"CompressionQuality"=dword:0
+"EnableVideo"=dword:1
+"EnableTimeCaption"=dword:1
+"VideoRecordLimitation"="0 15 30"
+"OpenDefault"=dword:0
+"PowerSaveTimeInterval"=dword:1e
+"SupportedVideoFormat"="*.wma;*.wmv"
+"IsPortraitScreen"=dword:0
+"EnableBrightness"=dword:0
+"StandBySecs"=dword:78
+"EnableFlash"=dword:0
+"HandleOOMEvent"=dword:0
+"VideoBufferingDepth"=dword:1312d00
+
+[HKEY_LOCAL_MACHINE\System\Pictures\Camera\OEM]
+"SoundFile"="\\windows\\ShutterSound.wav"
+"ForceShutterSound"=dword:1
+"ShutterSoundVolume"=dword:8000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\PictureResolution]
+"OptionNum"=dword:2
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\PictureResolution\1]
+"Width"=dword:280
+"Height"=dword:1e0
+"HighQualityFileSize"=dword:de60
+"NormalQualityFileSize"=dword:6410
+"LowQualityFileSize"=dword:2800
+"ItemString"="640x480"
+"IClass"="{32595559-0000-0010-8000-00aa00389b71}"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\PictureResolution\2]
+"Width"=dword:500
+"Height"=dword:3c0
+"HighQualityFileSize"=dword:2853000
+"NormalQualityFileSize"=dword:153AD00
+"LowQualityFileSize"=dword:83e000
+"ItemString"="2592x1944"
+;"IClass"="{47504A49-0000-0010-8000-00aa00389b71}"  ;jpg
+"IClass"="{32595559-0000-0010-8000-00aa00389b71}"
+
+;[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\PictureResolution\3]
+;"Width"=dword:a20
+;"Height"=dword:798
+;"HighQualityFileSize"=dword:9853000
+;"NormalQualityFileSize"=dword:353AD00
+;"LowQualityFileSize"=dword:153e000
+;"ItemString"="2592x1944"
+;"IClass"="{47504A49-0000-0010-8000-00aa00389b71}"  ;jpg
+
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\VideoProfile]
+"OptionNum"=dword:2
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\VideoProfile\1]
+"Width"=dword:140
+"Height"=dword:f0
+"VideoAudioFileSizePerSecond"=dword:16900
+"VideoOnlyFileSizePerSecond"=dword:9900
+"ItemString"="320x240"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\VideoProfile\2]
+"Width"=dword:280
+"Height"=dword:1e0
+"VideoAudioFileSizePerSecond"=dword:96900
+"VideoOnlyFileSizePerSecond"=dword:19900
+"ItemString"="640x480"
+
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\Zoom]
+"OptionNum"=dword:2
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\Zoom\1]
+"PhysicalZoom"=dword:64
+"LogicalZoom"=dword:1
+"ItemString"="zoom x1"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\Zoom\2]
+"PhysicalZoom"=dword:c8
+"LogicalZoom"=dword:2
+"ItemString"="zoom x2"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\VideoEncoderCLSID]
+"IClass"="{d23b90d0-144f-46bd-841d-59e4eb19dc59}"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\MuxCLSID]
+"IClass"="{4f4ba16c-ccb0-4d23-b1e8-672c7dfe4a02}"
+"VideoFileExt"="wmv"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\PreviewColorFormatCLSID]
+"IClass"="{32315659-0000-0010-8000-00aa00389b71}"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\CaptureColorFormatCLSID]
+"IClass"="{32315659-0000-0010-8000-00aa00389b71}"	;; MS BUG YV12
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\StillColorFormatCLSID]
+;"IClass"="{32595559-0000-0010-8000-00aa00389b71}" 	;yuy2
+;"IClass"="{47504A49-0000-0010-8000-00aa00389b71}" 	 ;jpg
+
+
+;default video encoder property
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\VideoEncoderProperty]
+"PropertyNum"=dword:2
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\VideoEncoderProperty\1]
+"VideoPropertyName"="_VBRQUALITY"
+"VideoPropertyVT"=dword:3
+"VidoepropertyValue"=dword:14
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\VideoEncoderProperty\2]
+"VideoPropertyName"="_COMPLEXITYEX"
+"VideoPropertyVT"=dword:3
+"VidoepropertyValue"=dword:0
+
+;default audio encoder property
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\AudioEncoderProperty]
+"PropertyNum"=dword:0
+
+;default auido capture property
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM\AudioCaptureFilter]
+"FormatTag"=dword:1
+"Channels"=dword:1
+"SamplesPerSec"=dword:1f40
+"AvgBytesPerSec"=dword:1f40
+"BlockAlign"=dword:1
+"BitsPerSample"=dword:8
+"SamplesPerBlock"=dword:0
+
+;user settings
+[HKEY_CURRENT_USER\Software\Microsoft\Pictures\Camera\USER]
+"CurrentZoom"=dword:0
+"Flash"=dword:1
+"Brightness"=dword:3
+"FileNumber"=dword:1
+"QualitySetting"=dword:0
+"AudioEnabled"=dword:1
+"Resolution"=dword:1
+"UserVideoTime"=dword:1E
+"DefaultDir"=""
+"FilePrefix"="img"
+"VideoProfile"=dword:1
+
+;jpg file compression quality. 0 is the lowest quality
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectShow\ImageSink\Quality\0\jpg\Quality]
+"Value"=hex:\
+      19,00,00,00
+"Type"=dword:00000004
+"NumberOfValues"=dword:00000001
+"GUID"="{1D5BE4B5-FA4A-452D-9CDD-5DB35105E7EB}"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectShow\ImageSink\Quality\1\jpg\Quality]
+"Value"=hex:\
+      41,00,00,00
+"Type"=dword:00000004
+"NumberOfValues"=dword:00000001
+"GUID"="{1D5BE4B5-FA4A-452D-9CDD-5DB35105E7EB}"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectShow\ImageSink\Quality\2\jpg\Quality]
+"Value"=hex:\
+      5a,00,00,00
+"Type"=dword:00000004
+"NumberOfValues"=dword:00000001
+"GUID"="{1D5BE4B5-FA4A-452D-9CDD-5DB35105E7EB}"
+
+ENDIF ; IMGCAMERAOEM !
+;------------------------------------------------------------------------------------------------
+

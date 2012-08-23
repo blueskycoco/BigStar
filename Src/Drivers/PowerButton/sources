@@ -1,0 +1,31 @@
+
+!if "$(BSP_NOPWRBTN)" == "1"
+SKIPBUILD=1
+!endif
+
+TARGETNAME=smdk6410_PwrBtn
+TARGETTYPE=DYNLINK
+
+RELEASETYPE=PLATFORM
+
+DLLENTRY=_DllMainCRTStartup
+DEFFILE=PowerButton.def
+
+
+!IF "$(_TGTPROJ)" == "smartfon"
+CDEFINES=$(CDEFINES) -DSMARTFON
+!ENDIF
+
+!IF "$(_TGTPROJ)" == "wpc"
+CDEFINES=$(CDEFINES) -DWPC
+!ENDIF
+
+
+TARGETLIBS= \
+	$(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\DriverLib.lib
+
+SOURCES= \
+	smdk6410_button.c	\
+	PowerButton.c
+

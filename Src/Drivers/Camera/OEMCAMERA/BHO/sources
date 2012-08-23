@@ -1,0 +1,22 @@
+TARGETNAME=camerabho
+TARGETTYPE=DYNLINK
+WINCEOEM=1
+
+SOURCELIBS=\
+	$(_TARGETPLATROOT)\lib\$(_CPUDEPPATH)\inserticon.lib \
+	$(_TARGETPLATROOT)\lib\$(_CPUDEPPATH)\inserticon.res \
+
+
+TARGETLIBS=\
+        $(_PUBLICROOT)\$(_TGTPROJ)\cesysgen\sdk\lib\$(_CPUINDPATH)\coredll.lib\
+        $(_PUBLICROOT)\$(_TGTPROJ)\cesysgen\sdk\lib\$(_CPUINDPATH)\uuid.lib \
+        $(_PUBLICROOT)\$(_TGTPROJ)\cesysgen\sdk\lib\$(_CPUINDPATH)\ole32.lib \
+        $(_PUBLICROOT)\$(_TGTPROJ)\cesysgen\sdk\lib\$(_CPUINDPATH)\oleaut32.lib \
+        $(_PUBLICROOT)\$(_TGTPROJ)\cesysgen\sdk\lib\$(_CPUINDPATH)\Aygshell.lib \
+
+INCLUDES=$(INCLUDES);$(_WINCEROOT)\others\atl\include
+
+SOURCES=\
+    bho.idl\
+    camerabho.cpp\
+    camerabho.rc

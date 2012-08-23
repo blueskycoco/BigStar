@@ -1,0 +1,71 @@
+!if 0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+!endif
+!if 0
+Use of this source code is subject to the terms of the Microsoft end-user
+license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+If you did not accept the terms of the EULA, you are not authorized to use
+this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+install media.
+!endif
+
+TARGETNAME=ipl
+TARGETTYPE=PROGRAM
+RELEASETYPE=PLATFORM
+EXEENTRY=StartUp
+NOMIPS16CODE=1
+
+SYNCHRONIZE_DRAIN=1
+INCLUDES=$(INCLUDES);$(_TARGETPLATROOT)\src\drivers\display\s3c6410_disp_lib;$(_TARGETPLATROOT)\src\drivers\display\s3c6410_ldi_lib;$(_TARGETPLATROOT)\Src\Bootloader\Eboot\Eboot\;$(_TARGETPLATROOT)\Src\Common\Nandflash\Fmd
+
+!IF "$(SMDK6410_X5D)" == "1"
+ADEFINES=$(ADEFINES) -pd "SMDK6410_X5D SETL {TRUE}"
+!ELSE
+ADEFINES=$(ADEFINES) -pd "SMDK6410_X5D SETL {FALSE}"
+!ENDIF
+
+!IF "$(BSP_DEBUGPORT)" == "SERIAL_UART0"
+CDEFINES=$(CDEFINES) -DDEBUG_PORT=0
+!ENDIF
+
+!IF "$(BSP_DEBUGPORT)" == "SERIAL_UART1"
+CDEFINES=$(CDEFINES) -DDEBUG_PORT=1
+!ENDIF
+
+!IF "$(BSP_USEDVS)" == "1"
+ADEFINES=$(ADEFINES) -pd "DVS_EN SETL {TRUE}"
+CDEFINES=$(CDEFINES) -DDVS_EN
+!ELSE
+ADEFINES=$(ADEFINES) -pd "DVS_EN SETL {FALSE}"
+!ENDIF
+ADEFINES=$(ADEFINES) -pd "BOOTLOADER SETL {TRUE}"
+CDEFINES=$(CDEFINES) -DBOOTLOADER
+
+LDEFINES=-subsystem:native /DEBUG /DEBUGTYPE:CV /FIXED:NO
+
+NOLIBC=1
+
+TARGETLIBS= \
+           $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\oal_cache_s3c6410.lib \
+           $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\oal_memory_s3c6410.lib \
+           $(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_kitl.lib \
+           $(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_log.lib  \
+           $(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_other.lib  \
+           $(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\iplcommon.lib \
+           $(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_blnk.lib  \
+           $(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\bootpart.lib         \
+           $(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\ddk_io.lib           \
+           $(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\fallite.lib   \
+		   $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\nandflash_lib.lib     \
+           $(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\fmdhooklib.lib   \
+           $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\gsnull.lib		\
+           $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\fulllibc.lib   \
+            $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_system_lib.lib    \
+            $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_pm.lib
+SOURCES=startup.s \
+        util.s    \
+        main.c    \
+        debug.c   \
+        args.c    \
+
+WINCETARGETFILES=ipl_romimage

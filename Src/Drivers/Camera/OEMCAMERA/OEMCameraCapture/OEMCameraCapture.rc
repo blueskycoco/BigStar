@@ -1,0 +1,124 @@
+//Microsoft eMbedded Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "newres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+/*/ English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+*/
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+//IDI_WCETEST             ICON    DISCARDABLE     "ddcam.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""newres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CAMCTRL DIALOG DISCARDABLE  0, 0, 138, 132
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CAMERA CONTROL"
+FONT 10, "宋体"
+BEGIN
+    LTEXT           "拍摄模式",IDC_STATIC,11,8,31,8
+    COMBOBOX IDC_VIDEOMODE, 58,6,50,40, CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP |CBS_DROPDOWNLIST
+    LTEXT           "捕捉格式",IDC_STATIC,11,28,34,8
+    COMBOBOX IDC_VIDEOFORMAT, 58,25,50,40, CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP |CBS_DROPDOWNLIST
+    LTEXT           "图像分辨率",IDC_STATIC,11,47,29,8
+    COMBOBOX IDC_RESOLUTION, 58,44,50,40, CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP |CBS_DROPDOWNLIST
+    LTEXT           "拍照方式",IDC_STATIC_CAPTURE,11,66,34,8
+    COMBOBOX IDC_STILL_CAPTURE_MODE, 58,63,50,40, CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP |CBS_DROPDOWNLIST
+    LTEXT           "场景选择",IDC_STATIC_THEME,11,66,34,8
+    COMBOBOX IDC_STILL_CAPTURE_THEME, 58,63,50,40, CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP |CBS_DROPDOWNLIST
+    CONTROL     "打开闪光灯",IDC_CHECK_FLASH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,82,87,10
+    CONTROL     "带音频摄像",IDC_CHECK_AUDIO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,82,87,10
+    
+    LTEXT           "__________________________________",IDC_STATIC,0,96,240,8
+    LTEXT           "环境",IDC_STATIC,11,110,46,8 
+    COMBOBOX IDC_WHITEBALANCE, 58,108,50,100, CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP |CBS_DROPDOWNLIST
+    DEFPUSHBUTTON   "运行相机",IDC_RUN_CAMERA,7,135,100,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "相机"
+    IDC_WCETEST             "相机"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

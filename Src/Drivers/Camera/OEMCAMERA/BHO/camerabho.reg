@@ -1,0 +1,15 @@
+[HKEY_CLASSES_ROOT\CLSID\{0DA50071-0B15-4702-A36A-C78C9ADAF47F}]
+  "Default"="IBHOObj"
+[HKEY_CLASSES_ROOT\CLSID\{0DA50071-0B15-4702-A36A-C78C9ADAF47F}\InProcServer32]
+  "Default"="camerabho.dll"
+  "ThreadingModel"="both"
+
+[HKEY_LOCAL_MACHINE\System\Pictures\Browser Helper Objects\{0DA50071-0B15-4702-A36A-C78C9ADAF47F}]
+  "Default"="camerabho"
+
+[HKEY_LOCAL_MACHINE\System\ChoosePicture\Browser Helper Objects\{0DA50071-0B15-4702-A36A-C78C9ADAF47F}]
+  "Default"="camerabho"
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Pictures\Camera\OEM]
+  "DisableCamera"=dword:1
+

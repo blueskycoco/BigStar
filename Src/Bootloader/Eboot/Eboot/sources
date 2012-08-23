@@ -1,0 +1,85 @@
+!if 0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+!endif
+!if 0
+Use of this source code is subject to the terms of the Microsoft end-user
+license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+If you did not accept the terms of the EULA, you are not authorized to use
+this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+install media.
+!endif
+
+!if "$(WINCEDEBUG)" == "debug"
+SKIPBUILD=1
+!endif
+
+TARGETNAME=eboot
+TARGETTYPE=PROGRAM
+RELEASETYPE=PLATFORM
+EXEENTRY=StartUp
+
+WINCECPU=1
+NOMIPS16CODE=1
+
+INCLUDES=$(INCLUDES);$(_PUBLICROOT)\common\oak\drivers\block\msflashfmd\inc;$(_TARGETPLATROOT)\Src\Common\Nandflash\Fmd
+INCLUDES=$(INCLUDES);$(_TARGETPLATROOT)\src\drivers\display\s3c6410_disp_lib;$(_TARGETPLATROOT)\src\drivers\display\s3c6410_ldi_lib;
+
+!IF "$(SMDK6410_X5D)" == "1"
+ADEFINES=$(ADEFINES) -pd "SMDK6410_X5D SETL {TRUE}"
+!ELSE
+ADEFINES=$(ADEFINES) -pd "SMDK6410_X5D SETL {FALSE}"
+!ENDIF
+
+!IF "$(BSP_USEDVS)" == "1"
+ADEFINES=$(ADEFINES) -pd "DVS_EN SETL {TRUE}"
+CDEFINES=$(CDEFINES) -DDVS_EN
+!ELSE
+ADEFINES=$(ADEFINES) -pd "DVS_EN SETL {FALSE}"
+!ENDIF
+ADEFINES=$(ADEFINES) -pd "BOOTLOADER SETL {TRUE}"
+ADEFINES=-pd "_TGTCPU SETS \"$(_TGTCPU)\"" $(ADEFINES)
+CDEFINES=$(CDEFINES) -DPPSH_PROTOCOL_NOTIMEOUT -DCOREDLL
+LDEFINES=-subsystem:native /DEBUG /DEBUGTYPE:CV /FIXED:NO
+CDEFINES=$(CDEFINES) -DBOOTLOADER
+
+TARGETLIBS= \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\oal_memory_s3c6410.lib  \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\oal_cache_s3c6410.lib   \
+	$(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_kitl.lib             \
+	$(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_log.lib              \
+	$(_PLATCOMMONLIB)\$(_CPUINDPATH)\oal_blnk.lib             \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\oal_blcommon.lib				\
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\bootpart.lib        \
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\eboot.lib            \
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\ne2kdbg.lib          \
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\ddk_io.lib           \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\nandflash_lib.lib     \
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\gsnull.lib           \
+	$(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\fulllibc.lib		  \
+	$(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\fmdhooklib.lib   \
+	$(_COMMONOAKROOT)\lib\$(_CPUDEPPATH)\fallite.lib   \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_pm.lib            \
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_system_lib.lib	\
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_disp_lib.lib	\
+	$(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\s3c6410_ldi_lib.lib	\
+    $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\HSMMCEBOOT_LIB.lib        \
+    .\..\FAT_LIB\FAT_LIB.lib   \
+
+SOURCELIBS=\
+	$(_PUBLICROOT)\COMMON\OAK\LIB\ARMV4I\RETAIL\cecompress.lib
+
+SOURCES= \
+    startup.s   \
+    util.s      \
+    main.c      \
+    debug.c     \
+    ether.c     \
+    flash.c     \
+    nand.cpp	\
+    iplmain.c	\
+    usb.c		\
+    usbs.s		\
+	SDInterface.c \
+
+WINCETARGETFILES=BootImage
+

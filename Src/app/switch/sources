@@ -1,0 +1,17 @@
+# All rights reserved ADENEO EMBEDDED 2010
+TARGETNAME=switch
+
+SOURCES= \
+    switch.cpp \
+
+WARNLEVEL=
+
+RELEASETYPE=PLATFORM
+TARGETTYPE=PROGRAM
+
+EXEENTRY=mainWCRTStartup
+
+TARGETLIBS= \
+    $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\coredll.lib
+
+SOURCELIBS= 

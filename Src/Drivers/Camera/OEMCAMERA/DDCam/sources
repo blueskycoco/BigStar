@@ -1,0 +1,38 @@
+!if 0
+
+ Copyright ©2002 Intel Corporation
+
+!endif
+
+!if "$(BSP_NOCAMERA)" == "1"
+SKIPBUILD=1
+!endif
+
+SYNCHRONIZE_DRAIN=1
+
+TARGETNAME=DDCam
+TARGETTYPE=PROGRAM
+RELEASETYPE=PLATFORM
+
+
+INCLUDES= \
+    $(_PUBLICROOT)\shellw\sdk\inc; \
+    $(_PUBLICROOT)\Directx\sdk\inc; \
+    $(_PUBLICROOT)\common\sdk\inc; \
+    $(_PUBLICROOT)\ie\sdk\inc; \
+    $(_PUBLICROOT)\common\oak\inc
+
+
+SOURCELIBS=\
+		   $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+		   $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\aygshell.lib \
+		   $(_PUBLICROOT)\directx\sdk\lib\$(_CPUINDPATH)\strmbase.lib \
+		   $(_PUBLICROOT)\directx\sdk\lib\$(_CPUINDPATH)\strmiids.lib \
+		   $(_PUBLICROOT)\dcom\sdk\lib\$(_CPUINDPATH)\uuid.lib \
+		   $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ole32.lib \
+
+
+SOURCES= \
+    grabber.cpp \
+    DDCam.cpp \
+    DDCam.rc

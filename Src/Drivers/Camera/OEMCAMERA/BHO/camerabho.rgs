@@ -1,0 +1,38 @@
+HKCR
+{
+	IBHOObj.IBHOObj.1 = s 'IEHlprObj Class'
+	{
+		CLSID = s '{0DA50071-0B15-4702-A36A-C78C9ADAF47F}'
+	}
+	IBHOObj.IBHOObj = s 'IBHOObj Class'
+	{
+		CurVer = s 'IBHOObj.IBHOObj.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0DA50071-0B15-4702-A36A-C78C9ADAF47F} = s 'IBHOObj Class'
+		{
+			ProgID = s 'IBHOObj.IBHOObj.1'
+			VersionIndependentProgID = s 'IBHOObj.IBHOObj'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+		}
+	}
+}
+
+HKLM
+{
+	System
+	{
+		NotificationsCPL
+		{
+			'Browser Helper Objects'
+			{
+				{0DA50071-0B15-4702-A36A-C78C9ADAF47F}
+			}
+		}
+	}
+}

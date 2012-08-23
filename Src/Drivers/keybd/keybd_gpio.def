@@ -1,0 +1,15 @@
+;
+; Windows CE Key Driver. Written by flyingfingers
+
+LIBRARY userkey
+EXPORTS
+	KEY_Close
+	KEY_Deinit
+	KEY_Init
+	KEY_IOControl
+	KEY_Open
+	KEY_PowerDown
+	KEY_PowerUp
+	KEY_Read
+	KEY_Seek
+	KEY_Write
