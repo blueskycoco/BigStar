@@ -279,6 +279,7 @@ IF BSP_NOBACKLIGHT !
 ENDIF ; BSP_NOBACKLIGHT !
 	SerialPort.exe		$(_FLATRELEASEDIR)\SerialPort.exe			NK	U
 	regedit.exe		$(_FLATRELEASEDIR)\regedit.exe			NK	U
+IF IMGULDR !
 	STD.exe		$(_FLATRELEASEDIR)\STD.exe			NK	U
 	switch.exe		$(_FLATRELEASEDIR)\switch.exe			NK	U
 	usemynls.exe	$(_FLATRELEASEDIR)\usemynls.exe			NK	U
@@ -333,7 +334,7 @@ ENDIF ; BSP_NOBACKLIGHT !
 		sym.ini  $(_FLATRELEASEDIR)\sym.ini			NK	U
 		keycode_hu1.ini	$(_FLATRELEASEDIR)\keycode_hu1.ini			NK	U
 		keyicon_hu1.png  $(_FLATRELEASEDIR)\keyicon_hu1.png			NK	U
-
+ENDIF IMGULDR
 	;baidu
 ; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
 

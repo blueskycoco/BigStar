@@ -4,6 +4,7 @@
 
 #include <windows.h>
 #include <nkintr.h>
+#ifndef IMGULDR
 #include  <Wrlspwr.h>
 BOOL GetWirelessState(RADIODEVTYPE radiotype, DWORD * radiostate)
 {
@@ -64,6 +65,7 @@ void SetWirelessState(RADIODEVTYPE radiotype, DWORD radiostate)
         FreeDeviceList(pDevice);
     }
 }
+#endif
 int WINAPI WinMain(HINSTANCE hInstance,
 					 HINSTANCE hPrevInstance,
 					 LPTSTR	 lpCmdLine,
@@ -83,6 +85,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 		RETAILMSG(1,(TEXT("[BootCompleteApp] Boot Complete Event Occured\r\n")));	
 		ResetEvent(BootCompleteEvent);
 		SetEvent(BootCompleteEvent);
+		#ifndef IMGULDR
 		if(GetWirelessState(POWER_MANAGED,&state))
 		{
 			if(state==1)
@@ -91,6 +94,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 				RETAILMSG(1,(TEXT("WiFi is power off at boot up\r\n")));
 		}else
 			RETAILMSG(1,(TEXT("Get Wireless state failed\r\n")));
+		#endif
 	}
 	return 0;
 }
