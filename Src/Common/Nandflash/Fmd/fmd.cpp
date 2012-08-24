@@ -211,9 +211,11 @@ static DWORD ReadFlashID(void)
 		if (Mfg == 0xEC || Mfg == 0x98)
 			break;
 	}
+	
 
 	Dev	= NF_RDDATA_BYTE();
-#if 0  // read more infomation
+	RETAILMSG(1, (TEXT(" ReadFlashID 0st cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
+#if 1  // read more infomation
 	{
 		BYTE  c3rd, c4th, c5th;
 
@@ -229,6 +231,38 @@ static DWORD ReadFlashID(void)
 #endif
 
 	NF_nFCE_H();
+
+	NF_nFCE1_L();						// Deselect the flash chip.
+	NF_CMD(CMD_READID); 				// Send flash ID read command.
+
+	NF_ADDR(0);
+
+	for (i = 0; i < 10; i++)
+	{
+		Mfg = NF_RDDATA_BYTE();
+
+		if (Mfg == 0xEC || Mfg == 0x98)
+			break;
+	}
+
+	Dev = NF_RDDATA_BYTE();	
+	RETAILMSG(1, (TEXT(" ReadFlashID 0st cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
+#if 1  // read more infomation
+		{
+			BYTE  c3rd, c4th, c5th;
+	
+			c3rd = NF_RDDATA_BYTE();
+			c4th = NF_RDDATA_BYTE();
+			c5th = NF_RDDATA_BYTE();
+			RETAILMSG(1, (TEXT(" ReadFlashID 1st cycle = 0x%x\n\r"), Mfg));
+			RETAILMSG(1, (TEXT(" ReadFlashID 2nd cycle = 0x%x\n\r"), Dev));
+			RETAILMSG(1, (TEXT(" ReadFlashID 3rd cycle = 0x%x\n\r"), c3rd));
+			RETAILMSG(1, (TEXT(" ReadFlashID 4th cycle = 0x%x\n\r"), c4th));
+			RETAILMSG(1, (TEXT(" ReadFlashID 5th cycle = 0x%x\n\r"), c5th));
+		}
+#endif
+	
+	NF_nFCE1_H();
 
 	return ((DWORD)(Mfg<<8)+Dev);
 }
@@ -732,9 +766,17 @@ BOOL FMD_LB_ReadSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSectorI
 	}
 
 	BOOL bLastMode = SetKMode(TRUE);
-
-	NF_nFCE_L();
-
+/*+add for next device support dillon 0824*/
+	if(startSectorAddr>8192*64)
+	{
+		nPageAddr = startSectorAddr-8192*64;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
+/*-add for next device support dillon 0824*/
 	NF_CLEAR_RB();
 
 	NF_CMD(CMD_READ);							// Send read command.
@@ -812,7 +854,14 @@ BOOL FMD_LB_ReadSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSectorI
 		{
             if ( pSectorInfoBuff->bBadBlock == 0xFF ) // Not Bad block
             {
-                NF_nFCE_H();
+            
+			/*+add for next device support dillon 0824*/
+				if(startSectorAddr>8192*64)
+				{
+                	NF_nFCE1_H();
+				}else
+					NF_nFCE_H();		
+			/*-add for next device support dillon 0824*/
                 SetKMode (bLastMode);
                 return FALSE;
             }
@@ -849,7 +898,13 @@ BOOL FMD_LB_ReadSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSectorI
 	{
 	    if ( pSectorInfoBuff->bBadBlock == 0xFF ) // Not Bad block
 	    {
-    		NF_nFCE_H();
+			/*+add for next device support dillon 0824*/
+				if(startSectorAddr>8192*64)
+				{
+                	NF_nFCE1_H();
+				}else
+					NF_nFCE_H();		
+			/*-add for next device support dillon 0824*/
     		SetKMode (bLastMode);
     		return FALSE;
     	}
@@ -914,13 +969,25 @@ BOOL FMD_LB_ReadSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSectorI
 
 		if (!ECC_CorrectData(nPageAddr, pSectorBuff+nSectorLoop*SECTOR_SIZE, SECTOR_SIZE, nRetEcc, ECC_CORRECT_MAIN))
 		{
-       		NF_nFCE_H();
+			/*+add for next device support dillon 0824*/
+				if(startSectorAddr>8192*64)
+				{
+                	NF_nFCE1_H();
+				}else
+					NF_nFCE_H();		
+			/*-add for next device support dillon 0824*/
        		SetKMode (bLastMode);
        		return FALSE;
 		}
 	}
 
-	NF_nFCE_H();
+	/*+add for next device support dillon 0824*/
+		if(startSectorAddr>8192*64)
+		{
+			NF_nFCE1_H();
+		}else
+			NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
 	SetKMode (bLastMode);
 
@@ -1018,8 +1085,18 @@ BOOL NAND_LB_ReadSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode)
 #endif
 
 	BOOL bLastMode = SetKMode(TRUE);
+	/*+add for next device support dillon 0824*/
+	if(sectorAddr>8192*64)
+	{
+		nPageAddr = sectorAddr-8192*64;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
+	/*-add for next device support dillon 0824*/
 
-	NF_nFCE_L();
 
 	NF_CLEAR_RB();
 	NF_CMD(CMD_READ);							// Send read confirm command.
@@ -1082,7 +1159,13 @@ BOOL NAND_LB_ReadSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode)
 	{
 	    if ( pInfo->bBadBlock == 0xFF ) // Not Bad block
 	    {
-    		NF_nFCE_H();
+			/*+add for next device support dillon 0824*/
+			if(sectorAddr>8192*64)
+			{
+            	NF_nFCE1_H();
+			}else
+				NF_nFCE_H();		
+			/*-add for next device support dillon 0824*/
     		SetKMode (bLastMode);
     		return FALSE;
 	    }
@@ -1118,7 +1201,13 @@ BOOL NAND_LB_ReadSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode)
 	}
 #endif  // DIRTYBIT_CHECK
 
-	NF_nFCE_H();
+	/*+add for next device support dillon 0824*/
+	if(sectorAddr>8192*64)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
 	SetKMode(bLastMode);
 
@@ -1348,7 +1437,17 @@ BOOL FMD_LB_WriteSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSector
     BOOL bLastMode = SetKMode(TRUE);
 
 	//  Enable Chip
-	NF_nFCE_L();
+	/*+add for next device support dillon 0824*/
+	if(startSectorAddr>8192*64)
+	{
+		nPageAddr = startSectorAddr-8192*64;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
+	/*-add for next device support dillon 0824*/
 
 	//  Issue command
 	NF_CMD(CMD_WRITE);
@@ -1512,7 +1611,13 @@ BOOL FMD_LB_WriteSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSector
 	}
 
 	//  Disable the chip
-	NF_nFCE_H();
+	/*+add for next device support dillon 0824*/
+	if(startSectorAddr>8192*64)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
 	SetKMode(bLastMode);
 
@@ -1534,7 +1639,17 @@ BOOL NAND_LB_WriteSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode
     	RETAILMSG(1, (TEXT("\n\nFMD::NAND_LB_WriteSectorInfo 0x%x %x\r\n\n\n"), nPageAddr,nSpareAddr));
 
 	//  Chip enable
-	NF_nFCE_L();
+	/*+add for next device support dillon 0824*/
+	if(sectorAddr>8192*64)
+	{
+		nPageAddr = sectorAddr-8192*64;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
+	/*-add for next device support dillon 0824*/
 	NF_CLEAR_RB();
 
 	//  Write the command
@@ -1634,7 +1749,13 @@ BOOL NAND_LB_WriteSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode
 		}
 	}
 
-	NF_nFCE_H();
+	/*+add for next device support dillon 0824*/
+	if(sectorAddr>8192*64)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
 	SetKMode(bLastMode);
 
@@ -1785,7 +1906,15 @@ BOOL FMD_LB_EraseBlock(BLOCK_ID blockID, int mode)
 #endif
 
 	//  Enable the chip
-	NF_nFCE_L();						// Select the flash chip.
+	if(blockID>8192)
+	{
+		dwPageID = (blockID-8192)<< LB_NAND_LOG_2_PAGES_PER_BLOCK;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
 
 	NF_CLEAR_RB();
 
@@ -1822,7 +1951,13 @@ BOOL FMD_LB_EraseBlock(BLOCK_ID blockID, int mode)
 		}
 	}
 
-	NF_nFCE_H();						// Select the flash chip.
+	/*+add for next device support dillon 0824*/
+	if(blockID>8192)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
 	SetKMode(bLastMode);
 
@@ -2029,7 +2164,17 @@ BOOL FMD_LB_GetOEMReservedByte(SECTOR_ADDR physicalSectorAddr, PBYTE pOEMReserve
     BOOL bLastMode = SetKMode(TRUE);
 
     //  Enable chip select
-    NF_nFCE_L();
+	/*+add for next device support dillon 0824*/
+	if(physicalSectorAddr>8192*64)
+	{
+		nPageAddr = physicalSectorAddr-8192*64;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
+	/*-add for next device support dillon 0824*/
 	NF_CLEAR_RB();
 
     //  Issue command
@@ -2052,7 +2197,15 @@ BOOL FMD_LB_GetOEMReservedByte(SECTOR_ADDR physicalSectorAddr, PBYTE pOEMReserve
     *pOEMReserved = (BYTE) NF_RDDATA_BYTE();		// read and discard
 
     //  Disable chip select
-    NF_nFCE_H();
+    
+	/*+add for next device support dillon 0824*/
+	if(physicalSectorAddr>8192*64)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
+    
 
     SetKMode(bLastMode);
 
@@ -2111,7 +2264,17 @@ BOOL FMD_LB_SetOEMReservedByte(SECTOR_ADDR physicalSectorAddr, BYTE bOEMReserved
     BOOL bLastMode = SetKMode(TRUE);
 
     //  Enable chip select
-    NF_nFCE_L();
+	/*+add for next device support dillon 0824*/
+	if(physicalSectorAddr>8192*64)
+	{
+		nPageAddr = physicalSectorAddr-8192*64;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
+	/*-add for next device support dillon 0824*/
 	NF_CLEAR_RB();
 
     //  Issue command
@@ -2152,7 +2315,13 @@ BOOL FMD_LB_SetOEMReservedByte(SECTOR_ADDR physicalSectorAddr, BYTE bOEMReserved
 	}
 
     //  Disable chip select
-    NF_nFCE_H();
+	/*+add for next device support dillon 0824*/
+	if(physicalSectorAddr>8192*64)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
     SetKMode(bLastMode);
 
@@ -2226,7 +2395,15 @@ BOOL LB_MarkBlockBad(BLOCK_ID blockID, int mode)
 	BOOL bLastMode = SetKMode(TRUE);
 
 	//  Enable chip
-	NF_nFCE_L();
+	if(blockID>8192)
+	{
+		dwStartPage = (blockID-8192)<< LB_NAND_LOG_2_PAGES_PER_BLOCK;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
 	NF_CLEAR_RB();
 
 	//  Issue command
@@ -2268,7 +2445,13 @@ BOOL LB_MarkBlockBad(BLOCK_ID blockID, int mode)
 	}
 
 	//  Disable chip select
-	NF_nFCE_H();
+	/*+add for next device support dillon 0824*/
+	if(blockID>8192)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
     SetKMode(bLastMode);
 
@@ -2349,7 +2532,15 @@ BOOL LB_IsBlockBad(BLOCK_ID blockID, int mode)
     BOOL bLastMode = SetKMode(TRUE);
 
 	//  Enable the chip
-	NF_nFCE_L();
+	if(blockID>8192)
+	{
+		dwPageID = (blockID-8192)<< LB_NAND_LOG_2_PAGES_PER_BLOCK;
+		NF_nFCE1_L();
+	}
+	else
+	{
+		NF_nFCE_L();
+	}
 	NF_CLEAR_RB();
 
 	//  Issue the command
@@ -2378,7 +2569,13 @@ BOOL LB_IsBlockBad(BLOCK_ID blockID, int mode)
 	}
 
 	//  Disable the chip
-	NF_nFCE_H();
+	/*+add for next device support dillon 0824*/
+	if(blockID>8192)
+	{
+		NF_nFCE1_H();
+	}else
+		NF_nFCE_H();		
+	/*-add for next device support dillon 0824*/
 
     SetKMode(bLastMode);
 

@@ -78,6 +78,8 @@ BOOL FMD_WriteSector_Stepldr(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PS
 
 #define NF_nFCE_L()             {s6410NAND->NFCONT &= ~(1<<1);}
 #define NF_nFCE_H()             {s6410NAND->NFCONT |=  (1<<1);}
+#define NF_nFCE1_L()             {s6410NAND->NFCONT &= ~(1<<2);}
+#define NF_nFCE1_H()             {s6410NAND->NFCONT |=  (1<<2);}
 #define NF_RDESTST              (s6410NAND->NFECCERR1)
 
 //-----------------------------------------
