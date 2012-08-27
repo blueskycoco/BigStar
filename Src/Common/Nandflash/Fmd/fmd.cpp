@@ -214,7 +214,7 @@ static DWORD ReadFlashID(void)
 	
 
 	Dev	= NF_RDDATA_BYTE();
-	RETAILMSG(1, (TEXT(" ReadFlashID 0st cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
+	RETAILMSG(1, (TEXT(" ReadFlashID first chip cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
 #if 1  // read more infomation
 	{
 		BYTE  c3rd, c4th, c5th;
@@ -222,11 +222,11 @@ static DWORD ReadFlashID(void)
 		c3rd = NF_RDDATA_BYTE();
 		c4th = NF_RDDATA_BYTE();
 		c5th = NF_RDDATA_BYTE();
-		RETAILMSG(1, (TEXT(" ReadFlashID 1st cycle = 0x%x\n\r"), Mfg));
-		RETAILMSG(1, (TEXT(" ReadFlashID 2nd cycle = 0x%x\n\r"), Dev));
-		RETAILMSG(1, (TEXT(" ReadFlashID 3rd cycle = 0x%x\n\r"), c3rd));
-		RETAILMSG(1, (TEXT(" ReadFlashID 4th cycle = 0x%x\n\r"), c4th));
-		RETAILMSG(1, (TEXT(" ReadFlashID 5th cycle = 0x%x\n\r"), c5th));
+		RETAILMSG(1, (TEXT(" ReadFlashID first chip 1st cycle = 0x%x\n\r"), Mfg));
+		RETAILMSG(1, (TEXT(" ReadFlashID first chip 2nd cycle = 0x%x\n\r"), Dev));
+		RETAILMSG(1, (TEXT(" ReadFlashID first chip 3rd cycle = 0x%x\n\r"), c3rd));
+		RETAILMSG(1, (TEXT(" ReadFlashID first chip 4th cycle = 0x%x\n\r"), c4th));
+		RETAILMSG(1, (TEXT(" ReadFlashID first chip 5th cycle = 0x%x\n\r"), c5th));
 	}
 #endif
 
@@ -246,7 +246,7 @@ static DWORD ReadFlashID(void)
 	}
 
 	Dev = NF_RDDATA_BYTE();	
-	RETAILMSG(1, (TEXT(" ReadFlashID 0st cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
+	RETAILMSG(1, (TEXT(" ReadFlashID second chip cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
 #if 1  // read more infomation
 		{
 			BYTE  c3rd, c4th, c5th;
@@ -254,11 +254,11 @@ static DWORD ReadFlashID(void)
 			c3rd = NF_RDDATA_BYTE();
 			c4th = NF_RDDATA_BYTE();
 			c5th = NF_RDDATA_BYTE();
-			RETAILMSG(1, (TEXT(" ReadFlashID 1st cycle = 0x%x\n\r"), Mfg));
-			RETAILMSG(1, (TEXT(" ReadFlashID 2nd cycle = 0x%x\n\r"), Dev));
-			RETAILMSG(1, (TEXT(" ReadFlashID 3rd cycle = 0x%x\n\r"), c3rd));
-			RETAILMSG(1, (TEXT(" ReadFlashID 4th cycle = 0x%x\n\r"), c4th));
-			RETAILMSG(1, (TEXT(" ReadFlashID 5th cycle = 0x%x\n\r"), c5th));
+			RETAILMSG(1, (TEXT(" ReadFlashID second chip 1st cycle = 0x%x\n\r"), Mfg));
+			RETAILMSG(1, (TEXT(" ReadFlashID second chip 2nd cycle = 0x%x\n\r"), Dev));
+			RETAILMSG(1, (TEXT(" ReadFlashID second chip 3rd cycle = 0x%x\n\r"), c3rd));
+			RETAILMSG(1, (TEXT(" ReadFlashID second chip 4th cycle = 0x%x\n\r"), c4th));
+			RETAILMSG(1, (TEXT(" ReadFlashID second chip 5th cycle = 0x%x\n\r"), c5th));
 		}
 #endif
 	
@@ -769,6 +769,7 @@ BOOL FMD_LB_ReadSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSectorI
 /*+add for next device support dillon 0824*/
 	if(startSectorAddr>8192*64)
 	{
+		RETAILMSG(1, (TEXT("FMD::FMD_LB_ReadSector BlockID 0x%x \r\n"), startSectorAddr-8192*64));
 		nPageAddr = startSectorAddr-8192*64;
 		NF_nFCE1_L();
 	}
@@ -1440,6 +1441,7 @@ BOOL FMD_LB_WriteSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSector
 	/*+add for next device support dillon 0824*/
 	if(startSectorAddr>8192*64)
 	{
+		RETAILMSG(1, (TEXT("FMD::FMD_LB_WriteSector BlockID 0x%x \r\n"), startSectorAddr-8192*64));
 		nPageAddr = startSectorAddr-8192*64;
 		NF_nFCE1_L();
 	}
@@ -1909,6 +1911,7 @@ BOOL FMD_LB_EraseBlock(BLOCK_ID blockID, int mode)
 	if(blockID>8192)
 	{
 		dwPageID = (blockID-8192)<< LB_NAND_LOG_2_PAGES_PER_BLOCK;
+		RETAILMSG(1, (TEXT("FMD_LB_EraseBlock 0x%x \r\n"), blockID));
 		NF_nFCE1_L();
 	}
 	else
