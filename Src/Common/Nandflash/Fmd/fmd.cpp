@@ -214,8 +214,8 @@ static DWORD ReadFlashID(void)
 	
 
 	Dev	= NF_RDDATA_BYTE();
-	RETAILMSG(1, (TEXT(" ReadFlashID first chip cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
-#if 1  // read more infomation
+	RETAILMSG(0, (TEXT(" ReadFlashID first chip cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
+#if 0  // read more infomation
 	{
 		BYTE  c3rd, c4th, c5th;
 
@@ -246,8 +246,8 @@ static DWORD ReadFlashID(void)
 	}
 
 	Dev = NF_RDDATA_BYTE();	
-	RETAILMSG(1, (TEXT(" ReadFlashID second chip cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
-#if 1  // read more infomation
+	RETAILMSG(0, (TEXT(" ReadFlashID second chip cycle = 0x%x 0x%x\n\r"), Mfg,Dev));
+#if 0  // read more infomation
 		{
 			BYTE  c3rd, c4th, c5th;
 	
@@ -1089,6 +1089,7 @@ BOOL NAND_LB_ReadSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode)
 	/*+add for next device support dillon 0824*/
 	if(sectorAddr>8192*64)
 	{
+		RETAILMSG(1, (TEXT("NAND_LB_ReadSectorInfo : %x \r\n"),sectorAddr/64));
 		nPageAddr = sectorAddr-8192*64;
 		NF_nFCE1_L();
 	}
@@ -1645,6 +1646,7 @@ BOOL NAND_LB_WriteSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode
 	if(sectorAddr>8192*64)
 	{
 		nPageAddr = sectorAddr-8192*64;
+		RETAILMSG(1, (TEXT("\n\nFMD::NAND_LB_WriteSectorInfo 0x%x %x\r\n\n\n"), nPageAddr/64,nSpareAddr));
 		NF_nFCE1_L();
 	}
 	else
@@ -1911,7 +1913,7 @@ BOOL FMD_LB_EraseBlock(BLOCK_ID blockID, int mode)
 	if(blockID>8192)
 	{
 		dwPageID = (blockID-8192)<< LB_NAND_LOG_2_PAGES_PER_BLOCK;
-		RETAILMSG(1, (TEXT("FMD_LB_EraseBlock 0x%x \r\n"), blockID));
+		RETAILMSG(0, (TEXT("FMD_LB_EraseBlock 0x%x \r\n"), blockID));
 		NF_nFCE1_L();
 	}
 	else

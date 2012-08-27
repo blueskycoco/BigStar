@@ -18,7 +18,7 @@
 #define BIN_HEADER_LENGTH			7
 //#define DEF_DOWNLOAD_ADDR           0x32000000
 #define DEF_DOWNLOAD_ADDR           0xA1000000
-#define FLASH_DOWNLOAD_ADDR           0xA4000000
+#define FLASH_DOWNLOAD_ADDR          0xA4000000
 
 
 #define NB0IMAGE	0
@@ -397,7 +397,7 @@ void FlashReadFromSD()
     	
     	EdbgOutputDebugString ( "g_pDownPt = 0x%x \r\n", g_pDownPt);
 	}
-	memset((void*)FILE_CACHE_START, 0xff, FILE_CACHE_LENGTH);
+	//memset((void*)FILE_CACHE_START, 0xff, FILE_CACHE_LENGTH);
 }
 
 
@@ -438,7 +438,7 @@ void LogoReadFromSD()
 BOOL SDReadData(DWORD cbData, LPBYTE pbData)
 {
    	UINT8* pbuf = NULL;
-//    EdbgOutputDebugString ("#### check point SDintf #1 cbdata = 0x%x pbData = 0x%x readPt = 0x%x\r\n",cbData,pbData,readPtIndex);    
+  //  EdbgOutputDebugString ("#### check point SDintf #1 cbdata = 0x%x pbData = 0x%x readPt = 0x%x\r\n",cbData,pbData,readPtIndex);    
 
 	while(1)
 	{
