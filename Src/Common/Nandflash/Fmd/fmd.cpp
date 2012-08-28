@@ -2675,7 +2675,7 @@ static BOOL DefineLayout()
             if (g_dwNumRegions)
             {
                 pRegion = (PFlashRegion)((LPBYTE)pFLS + sizeof(FlashLayoutSector) + pFLS->cbReservedEntries);
-			RETAILMSG(1, (TEXT("DefineLayout: sizeof(FlashLayoutSector) = %x cdReservedEntries = %x  \r\n"),
+				RETAILMSG(1, (TEXT("DefineLayout: sizeof(FlashLayoutSector) = %x cdReservedEntries = %x  \r\n"),
 				sizeof(FlashLayoutSector),pFLS->cbReservedEntries));
             }
         }

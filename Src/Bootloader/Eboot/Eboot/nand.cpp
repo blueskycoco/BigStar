@@ -698,7 +698,7 @@ BOOL WriteRawImageToBootMedia(DWORD dwImageStart, DWORD dwImageLength, DWORD dwL
 	DWORD dwBlock = 0;
 	DWORD dwNumBlocks = 0;
 	LPBYTE pbBuffer;
-       SectorInfo si;
+	SectorInfo si;
 	//unsigned int sectorchk;
 	unsigned int sectorcnt = 0;
 	unsigned int areachange = 0;
@@ -710,56 +710,58 @@ BOOL WriteRawImageToBootMedia(DWORD dwImageStart, DWORD dwImageLength, DWORD dwL
 	    OALMSG(OAL_ERROR, (TEXT("ERROR: WriteRawImageToBootMedia: device doesn't exist.\r\n")));
         return(FALSE);
     }
+	
 	if(dwLaunchAddr==0x10)
-		{
+	{
 		dwBlock = LOGO_BLOCK;
 		//dwImageLength = UPLDR_RAM_IMAGE_SIZE;
 		g_ImageType=IMAGE_TYPE_RAWBIN;
-		}else{
-
-	if (g_ImageType == IMAGE_TYPE_LOADER)
-	{
-		dwBlock = EBOOT_BLOCK;
-	    if ( !VALID_TOC(g_pTOC) ) 
-	    {
-		    OALMSG(OAL_WARN, (TEXT("WARN: WriteRawImageToBootMedia: INVALID_TOC\r\n")));
-	        if ( !TOC_Init(g_dwTocEntry, g_ImageType, dwImageStart, dwImageLength, dwLaunchAddr) ) 
-	        {
-			    OALMSG(OAL_ERROR, (TEXT("ERROR: INVALID_TOC\r\n")));
-        	    return(FALSE);
-        	}
-    	}
 	}
-	else if (g_ImageType == IMAGE_TYPE_STEPLDR)
+	else
 	{
-		dwBlock = STEPLDR_BLOCK;
-		dwImageStart += dwLaunchAddr;
-		//dwImageLength = 0x2050; //step loader can support 8k bytes.
-		//dwImageLength = STEPLDR_RAM_IMAGE_SIZE; //step loader can support 4k bytes only. NO SuperIPL case is 16K....... 3 Block
+		if (g_ImageType == IMAGE_TYPE_LOADER)
+		{
+			dwBlock = EBOOT_BLOCK;
+		    if ( !VALID_TOC(g_pTOC) ) 
+		    {
+			    OALMSG(OAL_WARN, (TEXT("WARN: WriteRawImageToBootMedia: INVALID_TOC\r\n")));
+		        if ( !TOC_Init(g_dwTocEntry, g_ImageType, dwImageStart, dwImageLength, dwLaunchAddr) ) 
+		        {
+				    OALMSG(OAL_ERROR, (TEXT("ERROR: INVALID_TOC\r\n")));
+	        	    return(FALSE);
+	        	}
+	    	}
+		}
+		else if (g_ImageType == IMAGE_TYPE_STEPLDR)
+		{
+			dwBlock = STEPLDR_BLOCK;
+			dwImageStart += dwLaunchAddr;
+			//dwImageLength = 0x2050; //step loader can support 8k bytes.
+			//dwImageLength = STEPLDR_RAM_IMAGE_SIZE; //step loader can support 4k bytes only. NO SuperIPL case is 16K....... 3 Block
+		}
+		else if (g_ImageType == IMAGE_TYPE_DIONB0)
+		{
+			dwBlock = DIONB0_BLOCK;
+			dwImageStart += dwLaunchAddr;
+			dwImageLength -= (dwImageLength / (g_FlashInfo.wDataBytesPerSector + 8))*8;
+		}
+		else if (g_ImageType == IMAGE_TYPE_UPLDR)
+		{
+			dwBlock = UPLDR_BLOCK;
+			dwImageStart += dwLaunchAddr;
+			dwImageLength = UPLDR_RAM_IMAGE_SIZE; //step loader can support 4k bytes only. NO SuperIPL case is 16K....... 3 Block
+		}
+		else if (g_ImageType == IMAGE_TYPE_FLASHBIN)
+		{
+			dwBlock = FLASHBIN_BLOCK;
+	//		dwImageStart += dwLaunchAddr;
+	//		dwImageLength = dwImageLength; //step loader can support 4k bytes only. NO SuperIPL case is 16K....... 3 Block
+		}
 	}
-	else if (g_ImageType == IMAGE_TYPE_DIONB0)
-	{
-		dwBlock = DIONB0_BLOCK;
-		dwImageStart += dwLaunchAddr;
-		dwImageLength -= (dwImageLength / (g_FlashInfo.wDataBytesPerSector + 8))*8;
-	}
-	else if (g_ImageType == IMAGE_TYPE_UPLDR)
-	{
-		dwBlock = UPLDR_BLOCK;
-		dwImageStart += dwLaunchAddr;
-		dwImageLength = UPLDR_RAM_IMAGE_SIZE; //step loader can support 4k bytes only. NO SuperIPL case is 16K....... 3 Block
-	}
-	else if (g_ImageType == IMAGE_TYPE_FLASHBIN)
-	{
-		dwBlock = FLASHBIN_BLOCK;
-//		dwImageStart += dwLaunchAddr;
-//		dwImageLength = dwImageLength; //step loader can support 4k bytes only. NO SuperIPL case is 16K....... 3 Block
-	}
-			}
-		if(dwLaunchAddr==0x10)
-			pbBuffer=(LPBYTE)dwImageStart;
-		else
-	pbBuffer = OEMMapMemAddr(dwImageStart, dwImageStart);
+	if(dwLaunchAddr==0x10)
+		pbBuffer=(LPBYTE)dwImageStart;
+	else
+		pbBuffer = OEMMapMemAddr(dwImageStart, dwImageStart);
 	 
     // Compute number of blocks.
     dwNumBlocks = (dwImageLength / (g_FlashInfo.wDataBytesPerSector*g_FlashInfo.wSectorsPerBlock)) + (dwImageLength%(g_FlashInfo.wDataBytesPerSector*g_FlashInfo.wSectorsPerBlock) ? 1: 0);

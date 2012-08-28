@@ -791,7 +791,7 @@ static BOOL MainMenu(PBOOT_CFG pBootCfg)
 
         while (! ( ( (KeySelect >= '0') && (KeySelect <= '9') ) ||
                    ( (KeySelect == 'A') || (KeySelect == 'a') ) ||
-                   ( (KeySelect == 'C') || (KeySelect == 'c') ) ||
+                   /*( (KeySelect == 'C') || (KeySelect == 'c') ) ||*/
                    ( (KeySelect == 'D') || (KeySelect == 'd') ) ||
                    ( (KeySelect == 'E') || (KeySelect == 'e') ) ||
                    ( (KeySelect == 'B') || (KeySelect == 'b') ) ||
