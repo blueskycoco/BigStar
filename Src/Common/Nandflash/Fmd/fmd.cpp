@@ -769,7 +769,7 @@ BOOL FMD_LB_ReadSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSectorI
 /*+add for next device support dillon 0824*/
 	if(startSectorAddr>8192*64)
 	{
-		RETAILMSG(1, (TEXT("FMD::FMD_LB_ReadSector BlockID 0x%x \r\n"), startSectorAddr-8192*64));
+		RETAILMSG(0, (TEXT("FMD::FMD_LB_ReadSector BlockID 0x%x \r\n"), startSectorAddr-8192*64));
 		nPageAddr = startSectorAddr-8192*64;
 		NF_nFCE1_L();
 	}
@@ -1089,7 +1089,7 @@ BOOL NAND_LB_ReadSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode)
 	/*+add for next device support dillon 0824*/
 	if(sectorAddr>8192*64)
 	{
-		RETAILMSG(1, (TEXT("NAND_LB_ReadSectorInfo : %x \r\n"),sectorAddr/64));
+		RETAILMSG(0, (TEXT("NAND_LB_ReadSectorInfo : %x \r\n"),sectorAddr/64));
 		nPageAddr = sectorAddr-8192*64;
 		NF_nFCE1_L();
 	}
@@ -1442,7 +1442,7 @@ BOOL FMD_LB_WriteSector(SECTOR_ADDR startSectorAddr, LPBYTE pSectorBuff, PSector
 	/*+add for next device support dillon 0824*/
 	if(startSectorAddr>8192*64)
 	{
-		RETAILMSG(1, (TEXT("FMD::FMD_LB_WriteSector BlockID 0x%x \r\n"), startSectorAddr-8192*64));
+		RETAILMSG(0, (TEXT("FMD::FMD_LB_WriteSector BlockID 0x%x \r\n"), startSectorAddr-8192*64));
 		nPageAddr = startSectorAddr-8192*64;
 		NF_nFCE1_L();
 	}
@@ -1646,7 +1646,7 @@ BOOL NAND_LB_WriteSectorInfo(SECTOR_ADDR sectorAddr, PSectorInfo pInfo, int mode
 	if(sectorAddr>8192*64)
 	{
 		nPageAddr = sectorAddr-8192*64;
-		RETAILMSG(1, (TEXT("\n\nFMD::NAND_LB_WriteSectorInfo 0x%x %x\r\n\n\n"), nPageAddr/64,nSpareAddr));
+		RETAILMSG(0, (TEXT("\n\nFMD::NAND_LB_WriteSectorInfo 0x%x %x\r\n\n\n"), nPageAddr/64,nSpareAddr));
 		NF_nFCE1_L();
 	}
 	else
@@ -2164,7 +2164,7 @@ BOOL FMD_LB_GetOEMReservedByte(SECTOR_ADDR physicalSectorAddr, PBYTE pOEMReserve
 	UINT32 nSpareAddr = NAND_SECTOR_SIZE;
 	UINT32 nPageAddr = physicalSectorAddr;
 
-	RETAILMSG(1, (TEXT("FMD_GetOEMReservedByte 0x%x \n"), nPageAddr));
+	RETAILMSG(0, (TEXT("FMD_GetOEMReservedByte 0x%x \n"), nPageAddr));
 
     BOOL bLastMode = SetKMode(TRUE);
 
@@ -2264,7 +2264,7 @@ BOOL FMD_LB_SetOEMReservedByte(SECTOR_ADDR physicalSectorAddr, BYTE bOEMReserved
 	UINT32 nSpareAddr = NAND_SECTOR_SIZE;
 	UINT32 nPageAddr = physicalSectorAddr;
 
-	RETAILMSG(1, (TEXT("FMD_SetOEMReservedByte 0x%x \n"), nPageAddr));
+	RETAILMSG(0, (TEXT("FMD_SetOEMReservedByte 0x%x \n"), nPageAddr));
 
     BOOL bLastMode = SetKMode(TRUE);
 
