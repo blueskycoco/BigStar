@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BmpTest", "BmpTest\BmpTest.vcproj", "{30B1E91B-6894-42D0-827F-C36D610CB6EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		1|24bit (ARMV4I) = 1|24bit (ARMV4I)
+		1|Pocket PC 2003 (ARMV4) = 1|Pocket PC 2003 (ARMV4)
+		Debug|24bit (ARMV4I) = Debug|24bit (ARMV4I)
+		Debug|Pocket PC 2003 (ARMV4) = Debug|Pocket PC 2003 (ARMV4)
+		Release|24bit (ARMV4I) = Release|24bit (ARMV4I)
+		Release|Pocket PC 2003 (ARMV4) = Release|Pocket PC 2003 (ARMV4)
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.1|24bit (ARMV4I).ActiveCfg = 1|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.1|24bit (ARMV4I).Build.0 = 1|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.1|24bit (ARMV4I).Deploy.0 = 1|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.1|Pocket PC 2003 (ARMV4).ActiveCfg = 1|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.1|Pocket PC 2003 (ARMV4).Build.0 = 1|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.1|Pocket PC 2003 (ARMV4).Deploy.0 = 1|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Debug|24bit (ARMV4I).ActiveCfg = Debug|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Debug|24bit (ARMV4I).Build.0 = Debug|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Debug|24bit (ARMV4I).Deploy.0 = Debug|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Debug|Pocket PC 2003 (ARMV4).Build.0 = Debug|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Debug|Pocket PC 2003 (ARMV4).Deploy.0 = Debug|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Release|24bit (ARMV4I).ActiveCfg = Release|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Release|24bit (ARMV4I).Build.0 = Release|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Release|24bit (ARMV4I).Deploy.0 = Release|24bit (ARMV4I)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
+		{30B1E91B-6894-42D0-827F-C36D610CB6EC}.Release|Pocket PC 2003 (ARMV4).Deploy.0 = Release|Pocket PC 2003 (ARMV4)
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
