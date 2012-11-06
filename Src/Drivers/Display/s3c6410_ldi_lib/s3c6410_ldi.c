@@ -1348,8 +1348,8 @@ void delay1()
 
 static void LDI_ZQ65RGB_power_on(void)
 {
-	g_pGPIOReg->GPFDAT |= (1<<15);
-	g_pGPIOReg->GPFCON = (g_pGPIOReg->GPFCON & ~(3<<30)) | (1<<30); // set GPF[15] as Output
+	//g_pGPIOReg->GPFDAT |= (1<<15);
+	//g_pGPIOReg->GPFCON = (g_pGPIOReg->GPFCON & ~(3<<30)) | (1<<30); // set GPF[15] as Output
 	delay1();
 	delay1();
 	delay1();

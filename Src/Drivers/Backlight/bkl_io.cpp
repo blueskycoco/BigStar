@@ -124,9 +124,11 @@ BKL_Seek(DWORD Handle, long lDistance, DWORD dwMoveMethod)
 }
 void DelayOpenBacklight()
 {
-    Sleep(1);
+	//Sleep(1);
 	BL_On(TRUE);
-    BL_ChangeBrightness();
+	BL_ChangeBrightness();
+	Sleep(800);
+	BL_Delay_On();
 	RETAILMSG(1, (TEXT("<<<Delay Open Backlight>>>\r\n")));
 }
 

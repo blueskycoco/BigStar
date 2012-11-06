@@ -258,7 +258,12 @@ void BL_InitBrightness()
 #endif
 
 }
+void BL_Delay_On()
+{
+	v_pGPIORegs->GPFDAT |= (1<<15);
+	v_pGPIORegs->GPFCON = (v_pGPIORegs->GPFCON & ~(3<<30)) | (1<<30); // set GPF[15] as Output
 
+}
 //
 // turn on/off the backlight
 //

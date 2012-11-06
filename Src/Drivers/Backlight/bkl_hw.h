@@ -54,6 +54,7 @@ void  BL_Deinit();
 BOOL  BL_Init();
 BOOL  IsACOn();
 void  BL_On(BOOL bOn);
+void  BL_Delay_On();
 void  BL_PowerOn(BOOL bInit);
 DWORD BL_MonitorThread(PVOID pParms);
 void  BL_ChangeBrightness();
