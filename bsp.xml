@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<Bsp uid="SMDK6410Big" cloned="0">
-  <Name>SMDK6410Big</Name>
+<Bsp uid="SMDK6410" cloned="0">
+  <Name>SMDK6410</Name>
   <CPU>ARMV4I</CPU>
   <Description>BSP for the Samsung SMDK6410 platform</Description>
   <Supports>

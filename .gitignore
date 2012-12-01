@@ -1,3 +1,12 @@
+SMDK6410Big.bat
+Src/Drivers/Camera/CAMERA_PDD/vssver2.scc
+Src/Drivers/Camera/DLL/vssver2.scc
+Src/Drivers/Camera/INC/vssver2.scc
+Src/Drivers/Camera/MDD/vssver2.scc
+Src/Drivers/Camera/OV5642_MODULE/vssver2.scc
+Src/Drivers/Camera/SMDK6410_CAMERA/vssver2.scc
+Src/Drivers/Camera/vssver2.scc
+bsp.xml
 retail.bif
 wpc.bif
 Build.dat
