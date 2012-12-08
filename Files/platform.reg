@@ -726,7 +726,7 @@ ENDIF
 ENDIF
 ENDIF
 
-IF BSP_NOUART1 !
+IF BSP_NOBT !
 IF BSP_KITL != SERIAL_UART1
 IF BSP_DEBUGPORT != SERIAL_UART1
 ;--------------- UART1 (Physical COM2 Port) ----------------------------------
@@ -776,7 +776,7 @@ ENDIF
 ENDIF
 ENDIF
 
-IF BSP_NOUART3 !
+IF BSP_NOGPS !
 IF BSP_KITL != SERIAL_UART3
 IF BSP_NOIRDA3
 ;--------------- UART3 (Physical COM2 Port) ----------------------------------
@@ -1938,65 +1938,6 @@ ENDIF ; IMGCAMERAOEM !
 "FontLinkMethods"=dword:00000000
 
 ;baidu
-[HKEY_CLASSES_ROOT\.bdskk]
-@="bdskkfile"
-
-[HKEY_CLASSES_ROOT\bdsktfile\Shell\Open\Command]
-@=""
-
-[HKEY_CLASSES_ROOT\bdsktfile\DefaultIcon]
-@="\\Program Files\\BaiduInput\\Setting.exe,-101"
-
-[HKEY_CLASSES_ROOT\.bdskt]
-@="bdsktfile"
-
-[HKEY_CLASSES_ROOT\bdskkfile\DefaultIcon]
-@="\\Program Files\\BaiduInput\\Setting.exe,-101"
-
-[HKEY_CLASSES_ROOT\bdskkfile\Shell\Open\Command]
-@=""
-
-[HKEY_CLASSES_ROOT\CLSID\{E3737555-AD55-4d58-9F10-C6754FA0DEE4}\IsSIPInputMethod]
-"default"="1"
-
-[HKEY_CLASSES_ROOT\CLSID\{E3737555-AD55-4d58-9F10-C6754FA0DEE4}\Option]
-"skink"="NumSel"
-"useKey"="0"
-"eng"=""
-"KeySkin"="baidumoren"
-"ch"=""
-"hint"="1"
-"is26"="1"
-"isEnLe"="1"
-"enSpace"="1"
-"pyCut"="1"
-"isEn"="0"
-"ciFreq"="1"
-"KeyFontSize"=dword:0000001e
-"ziFreq"="1"
-"gbk"="0"
-"iang"=""
-"k"=""
-"press"="1"
-"uang"=""
-"skin"="Default"
-"f"=""
-"ang"=""
-"zh"=""
-"legend"="1"
-"n"=""
-"ing"=""
-"cnType"="0"
-"sh"=""
-"pyType"="0"
-"line"="1"
-"skinw"="Default"
-
-[HKEY_CLASSES_ROOT\CLSID\{E3737555-AD55-4d58-9F10-C6754FA0DEE4}\InprocServer32]
-"default"="\\Program Files\\BaiduInput\\BaiduSIP.dll"
-
-[HKEY_CLASSES_ROOT\CLSID\{E3737555-AD55-4d58-9F10-C6754FA0DEE4}]
-"default"="BaiduInput"
 
 ;baidu
 ; @XIPREGION ENDIF PACKAGE_OEMDRIVERS

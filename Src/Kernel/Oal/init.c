@@ -260,6 +260,7 @@ static void InitializeGPIO()
 	pGPIOReg->GPLDAT &= ~(1<<3);
 	pGPIOReg->GPLCON0 = (pGPIOReg->GPLCON0 & ~(0x3<<12)) | (1<<12);
 	pGPIOReg->GPLPUD = (pGPIOReg->GPLPUD & ~(0x3<<6)) | (0<<6);
+
 	pGPIOReg->GPLDAT &= (1<<5);
 	pGPIOReg->GPLCON0 = (pGPIOReg->GPLCON0 & ~(0x3<<20)) | (1<<20);
 	pGPIOReg->GPLPUD = (pGPIOReg->GPLPUD & ~(0x3<<10)) | (0<<10);
@@ -275,7 +276,7 @@ static void InitializeGPIO()
 	//Delay(100);
 	//pGPIOReg->GPLDAT &= ~(1<<5);
 	//pGPIOReg->GPLDAT &= ~(1<<6);
-	Delay(500);
+	Delay(800);
 	pGPIOReg->GPLDAT |= (1<<5);
 	pGPIOReg->GPLDAT |= (1<<6);
 	// TODO: What port need initialization???
